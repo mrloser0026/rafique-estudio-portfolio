@@ -91,21 +91,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Rafique Estudio — M. Jahanzaib Awan | Full-Stack Engineer" },
+      { title: "Rafique Estudio — M. Jahanzaib Rafique | Full-Stack Engineer" },
       {
         name: "description",
         content:
-          "Rafique Estudio is the independent studio of M. Jahanzaib Awan, building high-performance Shopify experiences, full-stack applications, AI automation, and conversion-focused digital products.",
+          "Rafique Estudio is the independent studio of M. Jahanzaib Rafique, building high-performance Shopify experiences, full-stack applications, AI automation, and conversion-focused digital products.",
       },
-      { name: "author", content: "M. Jahanzaib Awan" },
+      { name: "author", content: "M. Jahanzaib Rafique" },
       {
         property: "og:title",
-        content: "Rafique Estudio — M. Jahanzaib Awan | Full-Stack Engineer",
+        content: "Rafique Estudio — M. Jahanzaib Rafique | Full-Stack Engineer",
       },
       {
         property: "og:description",
         content:
-          "Rafique Estudio is the independent studio of M. Jahanzaib Awan, building high-performance Shopify experiences, full-stack applications, AI automation, and conversion-focused digital products.",
+          "Rafique Estudio is the independent studio of M. Jahanzaib Rafique, building high-performance Shopify experiences, full-stack applications, AI automation, and conversion-focused digital products.",
       },
       { property: "og:site_name", content: "Rafique Estudio" },
       { property: "og:type", content: "website" },
@@ -154,7 +154,7 @@ function RootShell({ children }: { children: ReactNode }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "M. Jahanzaib Awan",
+              "name": "M. Jahanzaib Rafique",
               "jobTitle": "Founder & Full-Stack Engineer",
               "worksFor": {
                 "@type": "Organization",

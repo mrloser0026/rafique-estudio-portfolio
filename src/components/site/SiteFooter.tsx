@@ -21,7 +21,7 @@ export function SiteFooter() {
               <span className="eyebrow text-primary uppercase">{siteConfig.name?.split(' ').slice(1).join(' ') || "ESTUDIO"}</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Digital engineering studio founded by M. Jahanzaib Awan, building high-performance Shopify, full-stack, SaaS, and AI automation solutions.
+              Digital engineering studio founded by M. Jahanzaib Rafique, building high-performance Shopify, full-stack, SaaS, and AI automation solutions.
             </p>
             <p className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
               {siteConfig.founder} {siteConfig.handle ? `· ${siteConfig.handle} ` : ''}· {siteConfig.location}

@@ -125,7 +125,7 @@ function ContactPage() {
           <Reveal delay={0.1}>
             <p className="lede mt-5 text-muted-foreground">
               Describe your project or business bottleneck. You will get a technical opinion and
-              transparent milestone quote directly from M. Jahanzaib Awan.
+              transparent milestone quote directly from M. Jahanzaib Rafique.
             </p>
           </Reveal>
 

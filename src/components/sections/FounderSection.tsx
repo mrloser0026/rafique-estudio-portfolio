@@ -12,7 +12,7 @@ export function FounderSection({ section }: FounderSectionProps) {
   const portraitUrl = "/images/jahanzaib-awan.jpg";
   const bio =
     content["bio"] ||
-    "Welcome! I'm M. Jahanzaib Awan, founder of Rafique Estudio. I build high-performance digital experiences across Shopify, full-stack web applications, and AI automation.";
+    "Welcome! I'm M. Jahanzaib Rafique, founder of Rafique Estudio. I build high-performance digital experiences across Shopify, full-stack web applications, and AI automation.";
   const skills: string[] = content["skills"] || [
     "Custom Native Shopify Liquid",
     "Shopify Store Redesign for CRO",
@@ -31,7 +31,7 @@ export function FounderSection({ section }: FounderSectionProps) {
             <div className="relative aspect-[3/4] w-full overflow-hidden bg-muted">
               <img
                 src={portraitUrl}
-                alt="M. Jahanzaib Awan — Founder & Full-Stack Engineer at Rafique Estudio"
+                alt="M. Jahanzaib Rafique — Founder & Full-Stack Engineer at Rafique Estudio"
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
@@ -46,7 +46,7 @@ export function FounderSection({ section }: FounderSectionProps) {
                   </div>
                   <div>
                     <p className="font-mono text-xs font-semibold text-foreground">
-                      M. Jahanzaib Awan
+                      M. Jahanzaib Rafique
                     </p>
                     <p className="font-mono text-[10px] text-muted-foreground">
                       Founder & Full-Stack Engineer
@@ -63,7 +63,7 @@ export function FounderSection({ section }: FounderSectionProps) {
           <p className="eyebrow text-primary">The Engineer Behind the Work</p>
 
           <TextReveal
-            text={section.title || "M. Jahanzaib Awan"}
+            text={section.title || "M. Jahanzaib Rafique"}
             as="h2"
             className="display-2 mt-3 text-foreground font-display"
           />

@@ -132,7 +132,7 @@ function ProcessPage() {
         />
         <Reveal delay={0.1}>
           <p className="lede mx-auto mt-5 max-w-xl text-muted-foreground">
-            Discuss your requirements directly with M. Jahanzaib Awan, founder of Rafique Estudio.
+            Discuss your requirements directly with M. Jahanzaib Rafique, founder of Rafique Estudio.
           </p>
         </Reveal>
         <Reveal delay={0.2}>

@@ -6,7 +6,7 @@ import { globalSettingsQuery } from "@/lib/public-queries";
 import { paragraphs } from "@/lib/section-utils";
 import { Reveal, TextReveal, TiltCard } from "@/components/ui/motion-primitives";
 
-const ABOUT_TEXT = `I'm M. Jahanzaib Awan, founder of Rafique Estudio.
+const ABOUT_TEXT = `I'm M. Jahanzaib Rafique, founder of Rafique Estudio.
 I design and engineer high-performance digital experiences for brands that need more than a template.
 
 From Shopify engineering and conversion-focused websites to full-stack applications and AI automation, I combine design, engineering, and business thinking to build digital systems that are made to perform.`;
@@ -16,17 +16,17 @@ export const Route = createFileRoute("/about")({
     meta: [
       {
         title:
-          "About M. Jahanzaib Awan — Founder & Full-Stack Engineer | Rafique Estudio",
+          "About M. Jahanzaib Rafique — Founder & Full-Stack Engineer | Rafique Estudio",
       },
       {
         name: "description",
         content:
-          "M. Jahanzaib Awan — Founder & Full-Stack Engineer based in Pakistan. Engineering high-conversion Shopify, React, Next.js, and n8n AI systems.",
+          "M. Jahanzaib Rafique — Founder & Full-Stack Engineer based in Pakistan. Engineering high-conversion Shopify, React, Next.js, and n8n AI systems.",
       },
       {
         property: "og:title",
         content:
-          "About M. Jahanzaib Awan — Founder & Full-Stack Engineer | Rafique Estudio",
+          "About M. Jahanzaib Rafique — Founder & Full-Stack Engineer | Rafique Estudio",
       },
       {
         property: "og:description",
@@ -69,7 +69,7 @@ function AboutPage() {
             <p className="eyebrow text-primary">Senior Engineer Profile</p>
           </Reveal>
           <TextReveal
-            text="M. Jahanzaib Awan"
+            text="M. Jahanzaib Rafique"
             as="h1"
             className="display-1 mt-3 text-foreground font-display"
           />
@@ -129,7 +129,7 @@ function AboutPage() {
                   {siteConfig.portrait_url ? (
                     <img
                       src={siteConfig.portrait_url}
-                      alt="M. Jahanzaib Awan — Founder & Full-Stack Engineer at Rafique Estudio"
+                      alt="M. Jahanzaib Rafique — Founder & Full-Stack Engineer at Rafique Estudio"
                       loading="lazy"
                       decoding="async"
                       className="h-full w-full object-cover"

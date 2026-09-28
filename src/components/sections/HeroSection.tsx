@@ -31,7 +31,7 @@ export function HeroSection({ section }: HeroSectionProps) {
             <source media="(max-width: 767px)" srcSet={mobileImage || desktopImage} />
             <img
               src={desktopImage}
-              alt="M. Jahanzaib Awan — Founder & Full-Stack Engineer at Rafique Estudio"
+              alt="M. Jahanzaib Rafique — Founder & Full-Stack Engineer at Rafique Estudio"
               fetchPriority="high"
               decoding="async"
               className="h-full w-full object-cover object-center md:object-[70%_center] opacity-85 md:opacity-90"
@@ -71,7 +71,7 @@ export function HeroSection({ section }: HeroSectionProps) {
           {/* Headline */}
           <div className="mt-6">
             <div className="mb-4 text-xl font-medium text-muted-foreground">
-              M. Jahanzaib Awan <br/> Founder & Full-Stack Engineer
+              M. Jahanzaib Rafique <br/> Founder & Full-Stack Engineer
             </div>
             <TextReveal
               text={section.title || "I Build Digital Systems That Move Businesses Forward."}
