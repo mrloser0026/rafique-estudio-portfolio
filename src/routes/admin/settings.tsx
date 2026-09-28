@@ -7,7 +7,7 @@ import { Save, Settings2 } from "lucide-react";
 export const Route = createFileRoute("/admin/settings")({
   head: () => ({
     meta: [
-      { title: "Global Settings — IMAM ESTUDIO OS" },
+      { title: "Global Settings — RAFIQUE ESTUDIO OS" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

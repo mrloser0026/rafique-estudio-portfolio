@@ -24,7 +24,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/admin/services")({
   head: () => ({
     meta: [
-      { title: "Services Manager — IMAM ESTUDIO OS" },
+      { title: "Services Manager — RAFIQUE ESTUDIO OS" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

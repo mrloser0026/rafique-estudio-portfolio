@@ -16,12 +16,12 @@ export const Route = createFileRoute("/services/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Capability unavailable — IMAM ESTUDIO" },
+          { title: "Capability unavailable — RAFIQUE ESTUDIO" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
-    const title = `${loaderData.title} — IMAM ESTUDIO`;
+    const title = `${loaderData.title} — RAFIQUE ESTUDIO`;
     return {
       meta: [
         { title },

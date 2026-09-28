@@ -10,13 +10,13 @@ export const Route = createFileRoute("/services/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(servicesQuery),
   head: () => ({
     meta: [
-      { title: "Engineering Services — IMAM ESTUDIO" },
+      { title: "Engineering Services — RAFIQUE ESTUDIO" },
       {
         name: "description",
         content:
-          "Custom Shopify Liquid sections, high-conversion store redesigns, custom n8n AI automations, Next.js SaaS applications, and Framer design systems by IMAM ESTUDIO.",
+          "Custom Shopify Liquid sections, high-conversion store redesigns, custom n8n AI automations, Next.js SaaS applications, and Framer design systems by RAFIQUE ESTUDIO.",
       },
-      { property: "og:title", content: "Engineering Services — IMAM ESTUDIO" },
+      { property: "og:title", content: "Engineering Services — RAFIQUE ESTUDIO" },
       {
         property: "og:description",
         content:

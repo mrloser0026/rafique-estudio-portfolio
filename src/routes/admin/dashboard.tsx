@@ -15,7 +15,7 @@ import {
 export const Route = createFileRoute("/admin/dashboard")({
   head: () => ({
     meta: [
-      { title: "Dashboard — IMAM ESTUDIO OS" },
+      { title: "Dashboard — RAFIQUE ESTUDIO OS" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

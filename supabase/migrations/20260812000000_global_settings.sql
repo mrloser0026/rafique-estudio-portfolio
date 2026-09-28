@@ -1,4 +1,4 @@
-﻿CREATE TABLE IF NOT EXISTS public.global_settings (
+CREATE TABLE IF NOT EXISTS public.global_settings (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   key TEXT NOT NULL UNIQUE,
   value JSONB NOT NULL DEFAULT '{}'::jsonb,
@@ -23,8 +23,8 @@ USING (public.is_admin());
 -- Insert defaults
 INSERT INTO public.global_settings (key, value) VALUES
 ('site_config', '{
-  "name": "IMAM ESTUDIO",
-  "founder": "IMAM ESTUDIO",
+  "name": "RAFIQUE ESTUDIO",
+  "founder": "RAFIQUE ESTUDIO",
   "role": "Senior Full-Stack Engineer & UI/UX Architect",
   "handle": "",
   "whatsapp": "923091925177",

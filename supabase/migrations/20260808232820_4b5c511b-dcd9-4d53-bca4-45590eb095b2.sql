@@ -1,5 +1,5 @@
 -- ============================================================
--- IMAM ESTUDIO OS — core schema, hardened RBAC, RLS
+-- RAFIQUE ESTUDIO OS â€” core schema, hardened RBAC, RLS
 -- ============================================================
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";

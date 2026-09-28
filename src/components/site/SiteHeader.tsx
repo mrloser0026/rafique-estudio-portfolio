@@ -61,7 +61,7 @@ export function SiteHeader() {
         {/* Logo */}
         <Link to="/" className="group flex items-baseline gap-2" aria-label={`${siteConfig.name} home`}>
           <span className="font-display text-lg font-bold tracking-tight text-foreground md:text-xl uppercase">
-            {siteConfig.name?.split(' ')[0] || "IMAM"}
+            {siteConfig.name?.split(' ')[0] || "RAFIQUE"}
           </span>
           <span className="eyebrow text-primary transition-colors group-hover:text-foreground uppercase">
             {siteConfig.name?.split(' ').slice(1).join(' ') || "ESTUDIO"}

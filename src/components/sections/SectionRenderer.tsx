@@ -193,7 +193,7 @@ function CollaborationSection({ section }: { section: PageSection }) {
 function FinalCta({ section, siteConfig }: { section: PageSection; siteConfig?: any }) {
   const c = section.content;
   const wa = str(c, "whatsapp", siteConfig?.whatsapp || "");
-  const founderName = siteConfig?.founder?.split(" ")[0] || "IMAM";
+  const founderName = siteConfig?.founder?.split(" ")[0] || "RAFIQUE";
 
   return (
     <section className="hairline relative overflow-hidden bg-background py-20 md:py-28">

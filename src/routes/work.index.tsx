@@ -12,15 +12,15 @@ export const Route = createFileRoute("/work/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(projectsQuery),
   head: () => ({
     meta: [
-      { title: "Engineering Case Studies — IMAM ESTUDIO" },
+      { title: "Engineering Case Studies — RAFIQUE ESTUDIO" },
       {
         name: "description",
         content:
-          "Engineering case studies across Shopify commerce, React/Next.js platforms, n8n AI automations, and custom web infrastructure by IMAM ESTUDIO.",
+          "Engineering case studies across Shopify commerce, React/Next.js platforms, n8n AI automations, and custom web infrastructure by RAFIQUE ESTUDIO.",
       },
       {
         property: "og:title",
-        content: "Engineering Case Studies — IMAM ESTUDIO",
+        content: "Engineering Case Studies — RAFIQUE ESTUDIO",
       },
       {
         property: "og:description",

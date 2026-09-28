@@ -21,6 +21,6 @@ MALIK JAHANZAIB OS is a personal engineering portfolio and client acquisition pl
 
 ## Live Environment
 
-- **Production URL**: [https://imam-estudio-02.vercel.app](https://imam-estudio-02.vercel.app)
-- **GitHub Repository**: [nailasultanofficial-stack/IMAM-ESTUDIO-02](https://github.com/nailasultanofficial-stack/IMAM-ESTUDIO-02.git)
+- **Production URL**: [https://rafique-estudio-02.vercel.app](https://rafique-estudio-02.vercel.app)
+- **GitHub Repository**: [nailasultanofficial-stack/RAFIQUE-ESTUDIO-02](https://github.com/nailasultanofficial-stack/RAFIQUE-ESTUDIO-02.git)
 - **Fiverr Profile**: Malik Jahanzaib

@@ -4,13 +4,13 @@ import { Reveal, TextReveal } from "@/components/ui/motion-primitives";
 export const Route = createFileRoute("/process")({
   head: () => ({
     meta: [
-      { title: "Engineering Process — IMAM ESTUDIO" },
+      { title: "Engineering Process — RAFIQUE ESTUDIO" },
       {
         name: "description",
         content:
-          "4-phase engineering methodology by IMAM ESTUDIO: Discovery, Architecture, Sprints, and Production Launch.",
+          "4-phase engineering methodology by RAFIQUE ESTUDIO: Discovery, Architecture, Sprints, and Production Launch.",
       },
-      { property: "og:title", content: "Engineering Process — IMAM ESTUDIO" },
+      { property: "og:title", content: "Engineering Process — RAFIQUE ESTUDIO" },
       {
         property: "og:description",
         content: "Discovery, architecture, milestone-driven sprints, and production launch.",
@@ -132,7 +132,7 @@ function ProcessPage() {
         />
         <Reveal delay={0.1}>
           <p className="lede mx-auto mt-5 max-w-xl text-muted-foreground">
-            Discuss your requirements directly with Senior Engineer IMAM ESTUDIO.
+            Discuss your requirements directly with M. Jahanzaib Awan, founder of Rafique Estudio.
           </p>
         </Reveal>
         <Reveal delay={0.2}>

@@ -17,12 +17,11 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
           <Link to="/" className="inline-flex items-baseline gap-2 hover:opacity-80 transition-opacity">
-              <span className="font-display text-xl font-bold text-foreground uppercase">{siteConfig.name?.split(' ')[0] || "IMAM"}</span>
+              <span className="font-display text-xl font-bold text-foreground uppercase">{siteConfig.name?.split(' ')[0] || "RAFIQUE"}</span>
               <span className="eyebrow text-primary uppercase">{siteConfig.name?.split(' ').slice(1).join(' ') || "ESTUDIO"}</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Senior Full-Stack Engineer & UI/UX Architect. Engineering high-conversion Shopify
-              stores, Next.js platforms, SaaS applications, and custom n8n AI automations.
+              Digital engineering studio founded by M. Jahanzaib Awan, building high-performance Shopify, full-stack, SaaS, and AI automation solutions.
             </p>
             <p className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
               {siteConfig.founder} {siteConfig.handle ? `· ${siteConfig.handle} ` : ''}· {siteConfig.location}
@@ -61,7 +60,7 @@ export function SiteFooter() {
                 <a
                   href={whatsappUrl(
                     siteConfig.whatsapp || "",
-                    `Hi ${siteConfig.founder?.split(" ")[0] || "IMAM"} — I found your portfolio and I'd like to discuss a project.`,
+                    `Hi M. Jahanzaib — I found your portfolio and I'd like to discuss a project.`,
                   )}
                   target="_blank"
                   rel="noreferrer"
@@ -84,7 +83,7 @@ export function SiteFooter() {
 
         <div className="hairline mt-14 flex flex-col gap-3 pt-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>
-            © {year} {siteConfig.name} {siteConfig.handle ? `(${siteConfig.handle})` : ''}. All rights reserved.
+            © 2026 RAFIQUE ESTUDIO. All rights reserved.
           </p>
           <p className="font-mono uppercase tracking-[0.16em]">
             Engineering High Conversion Platforms

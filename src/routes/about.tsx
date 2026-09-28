@@ -6,28 +6,27 @@ import { globalSettingsQuery } from "@/lib/public-queries";
 import { paragraphs } from "@/lib/section-utils";
 import { Reveal, TextReveal, TiltCard } from "@/components/ui/motion-primitives";
 
-const ABOUT_TEXT = `Welcome! I'm IMAM ESTUDIO, a Senior Full-Stack Engineer and UI/UX Architect. I help brands replace slow, template-based websites with high-performance web applications, headless eCommerce solutions, and AI-powered automation systems.
+const ABOUT_TEXT = `I'm M. Jahanzaib Awan, founder of Rafique Estudio.
+I design and engineer high-performance digital experiences for brands that need more than a template.
 
-From custom Next.js platforms and Framer websites to advanced Shopify development, I build scalable, conversion-focused digital experiences.
-
-My expertise includes mobile-first UI/UX, custom Shopify solutions that eliminate app dependencies, and intelligent automation workflows that streamline business operations and drive growth.`;
+From Shopify engineering and conversion-focused websites to full-stack applications and AI automation, I combine design, engineering, and business thinking to build digital systems that are made to perform.`;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       {
         title:
-          "About IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect",
+          "About M. Jahanzaib Awan — Founder & Full-Stack Engineer | Rafique Estudio",
       },
       {
         name: "description",
         content:
-          "IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect based in Pakistan. Engineering high-conversion Shopify, React, Next.js, and n8n AI systems.",
+          "M. Jahanzaib Awan — Founder & Full-Stack Engineer based in Pakistan. Engineering high-conversion Shopify, React, Next.js, and n8n AI systems.",
       },
       {
         property: "og:title",
         content:
-          "About IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect",
+          "About M. Jahanzaib Awan — Founder & Full-Stack Engineer | Rafique Estudio",
       },
       {
         property: "og:description",
@@ -70,7 +69,7 @@ function AboutPage() {
             <p className="eyebrow text-primary">Senior Engineer Profile</p>
           </Reveal>
           <TextReveal
-            text="IMAM ESTUDIO"
+            text="M. Jahanzaib Awan"
             as="h1"
             className="display-1 mt-3 text-foreground font-display"
           />
@@ -127,13 +126,25 @@ function AboutPage() {
                 </div>
 
                 <div className="mt-4 aspect-[4/5] w-full overflow-hidden rounded-xl bg-muted border border-border/80">
-                  <img
-                    src="https://zcihimfisgzpeeyhdnfq.supabase.co/storage/v1/object/public/assets/main%20founderimaeg.jpeg"
-                    alt="IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect"
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover"
-                  />
+                  {siteConfig.portrait_url ? (
+                    <img
+                      src={siteConfig.portrait_url}
+                      alt="M. Jahanzaib Awan — Founder & Full-Stack Engineer at Rafique Estudio"
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                  ) : null}
+                  <div className={`flex h-full w-full flex-col items-center justify-center bg-surface-raised text-muted-foreground ${siteConfig.portrait_url ? 'hidden' : ''}`}>
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full border border-border/80 bg-surface/50">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <span className="mt-4 text-[10px] font-medium uppercase tracking-widest opacity-60">Portrait Pending</span>
+                  </div>
                 </div>
 
                 <p className="mt-4 font-display text-2xl font-semibold text-foreground">

@@ -1,17 +1,17 @@
-# IMAM ESTUDIO — Phase 0 Forensic Audit (blocked on source access)
+# RAFIQUE ESTUDIO — Phase 0 Forensic Audit (blocked on source access)
 
 ## Current status: source tree not reachable
 
 Two things are verified, not assumed:
 
 1. **This project is empty.** It contains only the blank Lovable starter — `src/routes/index.tsx` still renders the placeholder graphic, plus `__root.tsx`, `router.tsx`, and `styles.css`. There is no `src/app/`, no `src/components/TopNavBar.tsx`, no `api/leads/route.ts`, no Supabase client, no Dexie. Nothing from commit `a7653b5` is present.
-2. **Cross-project checkout fails.** I ran the read-only snapshot tool against `IMAM ESTUDIO` and `imam-estudio`. Both returned "no project matching … is accessible from this workspace."
+2. **Cross-project checkout fails.** I ran the read-only snapshot tool against `RAFIQUE ESTUDIO` and `rafique-estudio`. Both returned "no project matching … is accessible from this workspace."
 
 Phase 0 requires reading real files. Until the source is reachable, any Preserve/Extend/Replace/Remove map would be written from your specification text — which you explicitly ruled out as a source of truth.
 
 ## What unblocks it (pick one)
 
-- **Exact project identifier.** If IMAM ESTUDIO lives in this workspace under a different name, give me that name or its project ID and I will snapshot it and audit immediately. Cross-project sharing must also be enabled on it by its owner.
+- **Exact project identifier.** If RAFIQUE ESTUDIO lives in this workspace under a different name, give me that name or its project ID and I will snapshot it and audit immediately. Cross-project sharing must also be enabled on it by its owner.
 - **Upload the tree.** Attach the repository (zip or files). Minimum viable set for a credible audit: `package.json`, `package-lock.json`, `next.config.*`, `tsconfig.json`, `tailwind.config.*`, `src/app/**`, `src/components/**`, `src/lib/**`, `src/app/globals.css`, and `.env.example`.
 
 ## Second constraint you should decide on before Phase 2
@@ -62,4 +62,4 @@ Replacement design:
 
 ## Next step
 
-Reply with the workspace project name/ID for IMAM ESTUDIO, or upload the source. I run the audit and return the Preserve/Extend/Replace/Remove map and risk register before any code changes.
+Reply with the workspace project name/ID for RAFIQUE ESTUDIO, or upload the source. I run the audit and return the Preserve/Extend/Replace/Remove map and risk register before any code changes.

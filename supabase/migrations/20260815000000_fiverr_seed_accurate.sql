@@ -72,7 +72,7 @@ VALUES (
                         looked fake.
                         The Solution: I ripped out the third-party app and built a completely standalone, native Review
                         Engine using Shopify Metaobjects and custom Liquid blocks. Before importing, I performed a deep
-                        data cleanup—converting CSVs to JSON, stripping out over 100 duplicated reviews, and
+                        data cleanupâ€”converting CSVs to JSON, stripping out over 100 duplicated reviews, and
                         prioritizing 22 high-quality photo reviews.
                         The Result: I designed a beautiful, premium masonry layout that displays photo-first reviews at
                         the top. The client now has 100% control over their social proof, zero monthly app fees, and a
@@ -153,7 +153,7 @@ VALUES (
                         instead of 1 ring, 1 free bracelet, and 1 free pouch).
                         The Solution: I built a custom one-page UI where product grids and a sticky "Your Bundle"
                         summary coexist dynamically. I wrote custom JavaScript validation that locks categories once an
-                        item is selected—forcing the exact required combination (1 Ring, 1 Bracelet, 1 Pouch) before the
+                        item is selectedâ€”forcing the exact required combination (1 Ring, 1 Bracelet, 1 Pouch) before the
                         Add-to-Cart button activates.
                         The Result: A flawless, high-converting premium bundle experience that fully integrates with
                         Shopify''s native automatic discount engine, protecting the merchant''s profit margins while
@@ -205,7 +205,7 @@ INSERT INTO public.projects (slug, title, description, thumbnail_url, display_or
 VALUES (
     'cloned-amazon-s-website-7',
     'Cloned Amazon''s website',
-    'Just cloned Amazon''s website using only HTML and CSS! 💻✨ Check out my latest project and see
+    'Just cloned Amazon''s website using only HTML and CSS! ðŸ’»âœ¨ Check out my latest project and see
                         how close it looks to the real deal. #WebDevelopment #Coding #HTML #CSS #Tech #Programming
                         #Developer #WebDesign #TechSkills #Project',
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_portfolio_project_large/v1/attachments/project_item/attachment/0a090c286e0766e97cca297cd036d29a-1717002256616/AMAZON%20FULL%20PAGE.png',
@@ -268,13 +268,13 @@ VALUES (
 
                         How I Dealt With Them
                         I engineered a custom, app-free Shopify 2.0 solution:
-                        • Mobile Gallery: Built a 1+2 media grid for screens <999px. Wrote vanilla JS to sync
+                        â€¢ Mobile Gallery: Built a 1+2 media grid for screens <999px. Wrote vanilla JS to sync
                         side-preview images with the main slider, safely skipping hidden variant images.
-                        • Sticky ATC: Developed a persistent mobile bar with a variant selector, dynamic pricing, and a
+                        â€¢ Sticky ATC: Developed a persistent mobile bar with a variant selector, dynamic pricing, and a
                         back-in-stock modal.
-                        • Delivery Engine: Coded Liquid logic to calculate real-time shipping dates based on
+                        â€¢ Delivery Engine: Coded Liquid logic to calculate real-time shipping dates based on
                         localization, cutoff times, and weekend rules.
-                        • Smooth UX: Added smooth-scroll anchor links for reviews.
+                        â€¢ Smooth UX: Added smooth-scroll anchor links for reviews.
 
                         Result
                         A lightning-fast, high-converting mobile product page with a premium UI and transparent delivery
@@ -302,11 +302,11 @@ VALUES (
 
                         How I Dealt With Them
                         Working under a strict 24-hour deadline, I audited the theme''s code:
-                        • Banner Fix: I isolated and removed the conflicting CSS/JS override that was forcing the text
+                        â€¢ Banner Fix: I isolated and removed the conflicting CSS/JS override that was forcing the text
                         color change on the collection templates.
-                        • Mobile Menu Repair: I debugged the homepage-specific navigation logic, repairing the drawer''s
+                        â€¢ Mobile Menu Repair: I debugged the homepage-specific navigation logic, repairing the drawer''s
                         scripts to ensure it opened and closed smoothly across all devices.
-                        • QA Check: I performed a rapid cross-check of the store''s overall mobile responsiveness and
+                        â€¢ QA Check: I performed a rapid cross-check of the store''s overall mobile responsiveness and
                         launch stability to prevent any other surprises.
 
                         Result
@@ -344,7 +344,7 @@ VALUES (
 
                         High-Contrast UX: I implemented a strong visual hierarchy using striking neon-green accents
                         against a dark industrial aesthetic to drastically emphasize the "After" states and the
-                        "Geeignet für" (Suitable for) target audience crit',
+                        "Geeignet fÃ¼r" (Suitable for) target audience crit',
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_portfolio_project_large/v1/attachments/project_item/attachment/37acf12af2f8afcab5adb2ad4272a267-1777980329669/High-Converting%20B2B%20Lead%20Gen%20Funnel%20in%20Framer.png',
     13,
     true,
@@ -355,10 +355,10 @@ INSERT INTO public.projects (slug, title, description, thumbnail_url, display_or
 VALUES (
     'custom-shopify-page-templates-13',
     'Custom Shopify Page Templates',
-    'Client & Goals: A premium health and wellness brand needed to elevate their store’s UX to
+    'Client & Goals: A premium health and wellness brand needed to elevate their storeâ€™s UX to
                         match high-end competitors. Their goal was to redesign their core informational pages (Science,
                         Technology) and Best Seller collection.
-                        Challenges: The client’s previous theme was rigid, hard to edit, and visually outdated compared
+                        Challenges: The clientâ€™s previous theme was rigid, hard to edit, and visually outdated compared
                         to their top competitors. They needed a polished look without losing the ability to edit content
                         themselves.
                         Solution: I engineered custom, responsive Liquid templates using Shopify OS 2.0 architecture. I
@@ -540,7 +540,7 @@ VALUES (
                         style, pricing area, and a responsive layout structure.
 
                         The main challenge was keeping the design similar in behavior to the reference while making it
-                        visually different and suitable for the client’s Shopify store. I handled this by creating a
+                        visually different and suitable for the clientâ€™s Shopify store. I handled this by creating a
                         clean custom layout with modern spacing, clear product selection cards, and a user-friendly
                         bundle flow.
 
@@ -834,12 +834,12 @@ VALUES (
                         theme.
 
                         The Challenge: Shopify only allows one automatic discount at a time. The client already had an
-                        automatic tiered discount running, which conflicted with the "Free Gift at €75" functionality I
+                        automatic tiered discount running, which conflicted with the "Free Gift at â‚¬75" functionality I
                         built, causing the 100% discount not to apply.
 
-                        The Solution: I engineered a smart workaround using a "€0 Gift Strategy". I created hidden €0
+                        The Solution: I engineered a smart workaround using a "â‚¬0 Gift Strategy". I created hidden â‚¬0
                         products that do not show up in store searches or collections. The custom cart drawer calculates
-                        the €75 threshold via an animated progress bar. Once unlocked, the customer can choose from 3
+                        the â‚¬75 threshold via an animated progress bar. Once unlocked, the customer can choose from 3
                         premium gifts. I also integrated a swipeable "You Might Also Like" product carousel and a live
                         countdown timer in the announcement bar. This saved the client monthly app fees while
                         dramatically improving the checkout UX.',
@@ -856,7 +856,7 @@ VALUES (
     'Client & Goal:
                         The client, running the Netherlands-based Shopify store WingBee, needed to implement clear,
                         user-friendly breadcrumb navigation on all Product and Collection pages. The goal was to improve
-                        user experience and store navigation while precisely matching their brand''s typography—all
+                        user experience and store navigation while precisely matching their brand''s typographyâ€”all
                         without relying on bloated, monthly-fee third-party apps.
 
                         Challenges:
@@ -888,7 +888,7 @@ VALUES (
                         their homepage to feature high-priority products.
 
                         The Challenge:
-                        The store had disconnected pricing data—the homepage and collection pages were not reflecting
+                        The store had disconnected pricing dataâ€”the homepage and collection pages were not reflecting
                         the updated prices shown on individual product pages. Additionally, the mobile shopping
                         experience was suffering from a default 1-column product grid, which caused excessive vertical
                         scrolling and high friction for mobile buyers.
@@ -951,7 +951,7 @@ VALUES (
     'google-reviews-api-chat-40',
     'Google Reviews API & Chat',
     'The Goal: The client wanted to eliminate expensive monthly subscription fees for third-party
-                        review and chat apps on two of their Webflow websites (Detailing Masters & Joët Essence).The
+                        review and chat apps on two of their Webflow websites (Detailing Masters & JoÃ«t Essence).The
                         Challenge: They needed a robust, automated way to display real-time 5-star Google reviews and a
                         global floating WhatsApp widget without slowing down the website or relying on paid SaaS
                         plugins.The Solution: I developed a custom, subscription-free architecture. I integrated the
@@ -1091,7 +1091,7 @@ INSERT INTO public.projects (slug, title, description, thumbnail_url, display_or
 VALUES (
     'custom-shopify-slider-with-smooth-mobile-gestures-46',
     'Custom Shopify Slider with Smooth Mobile Gestures',
-    'The goal for this initial project was to create a specific custom section for the client’s
+    'The goal for this initial project was to create a specific custom section for the clientâ€™s
                         developing jewelry brand, Siparantum. The client wanted to replicate the slick, responsive
                         functionality of a reference site (uk.craftdlondon.com), specifically a smooth product slider.
                         Challenges included developing a static-to-dynamic workflow that allowed the client easy
@@ -1362,7 +1362,7 @@ VALUES (
                         A major technical challenge during this project was navigating strict two-factor authentication
                         (2FA) barriers and restrictive hosting environments on the client''s end, which initially blocked
                         development. To overcome this and keep the project moving fast, I spun up an independent
-                        development server to build the entire site—including a custom-designed logo and a
+                        development server to build the entire siteâ€”including a custom-designed logo and a
                         lead-generation layout. Once the client reviewed and approved the live staging site, I securely
                         migrated the complete, polished website over to their primary Bluehost server, resulting in a
                         flawless launch.',
@@ -1466,7 +1466,7 @@ VALUES (
     'Custom Responsive Video Hero Section',
     'Client Goal: The client, representing a high-end artisan bakery, needed help getting their
                         Shopify homepage over the finish line. Specifically, they required a custom video background
-                        section that precisely matched a provided Figma design—featuring a perfectly centered layout for
+                        section that precisely matched a provided Figma designâ€”featuring a perfectly centered layout for
                         desktop and a full-viewport, edge-to-edge scaling experience for mobile.
 
                         The Challenge: The existing live site had custom navigation and footer configurations that could
@@ -1599,7 +1599,7 @@ VALUES (
     'shopify-typography-custom-section-design-69',
     'Shopify Typography & Custom Section Design',
     'Client & Goals:
-                        A high-end lifestyle brand approached The Imam Studio to elevate their online storefront''s
+                        A high-end lifestyle brand approached The Rafique Estudio to elevate their online storefront''s
                         visual identity. Their primary goal was to establish a premium, trustworthy aesthetic through a
                         mathematical typography hierarchy and bespoke UI elements that drive conversions.
 
@@ -1784,8 +1784,8 @@ VALUES (
 
                         The Challenge:
                         Hardcoding the section would have been easy, but it wouldn''t serve the client''s long-term needs.
-                        The real challenge was engineering a complex UI layout—combining text panels, interactive
-                        navigation, and responsive video embeds—while keeping it 100% dynamic and easily editable for a
+                        The real challenge was engineering a complex UI layoutâ€”combining text panels, interactive
+                        navigation, and responsive video embedsâ€”while keeping it 100% dynamic and easily editable for a
                         non-technical merchant.
 
                         My Solution:
@@ -1841,8 +1841,8 @@ VALUES (
                         intuitive, visually appealing two-tab interface to improve the user journey and conversion rate.
 
                         The Challenge:
-                        The primary challenge was organizing a massive amount of product data—fabric types, collar
-                        styles, cuff designs, and over seven specific body measurements—without overwhelming the buyer
+                        The primary challenge was organizing a massive amount of product dataâ€”fabric types, collar
+                        styles, cuff designs, and over seven specific body measurementsâ€”without overwhelming the buyer
                         or breaking the mobile layout. The UI needed to feel premium, lightweight, and native to their
                         existing theme.
 
@@ -1896,7 +1896,7 @@ VALUES (
                         slider for their product pages to improve visual presentation on both desktop and mobile
                         devices. The goal was a premium, modern feel without sacrificing site speed.
 
-                        Challenges: The client required the slider to be completely dynamic—meaning it needed to pull
+                        Challenges: The client required the slider to be completely dynamicâ€”meaning it needed to pull
                         images seamlessly from existing Shopify Collections or allow manual image uploads via custom
                         Theme Editor blocks, all while maintaining a smooth, glitch-free marquee loop.
 
@@ -1940,7 +1940,7 @@ VALUES (
                         As a Senior Shopify Developer, I engineered a custom Liquid section that bypassed the
                         third-party app conflicts. I built a seamless, interactive UI with "Best Deal" badges and
                         dynamic price updating. To ensure the merchant had full control, I exposed all styling
-                        parameters—including variant swatch colors, active borders, and spacing—directly to the Shopify
+                        parametersâ€”including variant swatch colors, active borders, and spacingâ€”directly to the Shopify
                         Theme Editor. The final result was a perfectly mobile-responsive, highly accessible, and
                         conversion-optimized checkout flow.',
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_portfolio_project_large/v1/attachments/project_item/attachment/5b3b46f79a1a714d0da0e433b1a3354c-1781186372021/Custom%20Subscription%20Buy%20Box%20_%20Variants.png',
@@ -1988,7 +1988,7 @@ VALUES (
                         Liquid.
 
                         The main technical challenge was ensuring flawless responsive design across all devices without
-                        causing layout shifts or horizontal scrolling—specifically handling viewport width constraints
+                        causing layout shifts or horizontal scrollingâ€”specifically handling viewport width constraints
                         to maintain a clean edge-to-edge layout without CSS overflow bugs.
 
                         I developed and delivered a fully modular Shopify section featuring a smooth Flickity carousel
@@ -2065,7 +2065,7 @@ VALUES (
     'Client & Goals:
                         My client runs a specialized premium gifting website and needed a seamless way for buyers to
                         input recipient details (Name, Delivery Address, and Gift Message) directly on the product page
-                        before adding to the cart—similar to a high-end flower delivery service. The goal was to avoid
+                        before adding to the cartâ€”similar to a high-end flower delivery service. The goal was to avoid
                         bulky monthly apps and keep the site fast.
 
                         Challenges:
@@ -2124,8 +2124,8 @@ VALUES (
 
                         Challenges:
                         The main challenge was precision targeting. The client explicitly required that the texture only
-                        apply to the header and buttons, while keeping functional UI elements—like the slide-out AJAX
-                        cart drawer—completely clean and solid.
+                        apply to the header and buttons, while keeping functional UI elementsâ€”like the slide-out AJAX
+                        cart drawerâ€”completely clean and solid.
 
                         How I Dealt With Them:
                         Instead of relying on heavy page builders, I wrote lightweight, highly targeted CSS to apply the
@@ -2263,7 +2263,7 @@ VALUES (
                         theme scripts, and ensuring all text strings were fully translatable across multiple languages.
 
                         Solution: I developed a custom Shopify liquid block with lightweight JavaScript. I used unique
-                        class naming to prevent style conflicts and ensured full compatibility with Shopify’s native
+                        class naming to prevent style conflicts and ensured full compatibility with Shopifyâ€™s native
                         localization API. This allowed the client to manage all translations through their existing
                         dashboard seamlessly.',
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_portfolio_project_large/v1/attachments/project_item/attachment/8fd33a20d2b514df45cf8b61b2a92609-1781189963295/Dynamic%20Geo-Targeted%20Shipping%20_%20Localization%20UI.png',
@@ -2322,7 +2322,7 @@ VALUES (
     'Shopify Personalized Gift Bundle & Customization L',
     'Client Challenge: My client wanted to incentivize bulk purchases by offering a
                         "Name-Personalized Gift Tin" for customers who bought 3 pairs of earrings. The challenge was
-                        that Shopify’s basic plan does not natively support complex, required cart customization fields
+                        that Shopifyâ€™s basic plan does not natively support complex, required cart customization fields
                         that persist through to the order confirmation and packing slip.
 
                         My Solution:

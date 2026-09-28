@@ -10,7 +10,7 @@ import { globalSettingsQuery } from "@/lib/public-queries";
 export const Route = createFileRoute("/admin/navigation")({
   head: () => ({
     meta: [
-      { title: "Navigation Manager — IMAM ESTUDIO OS" },
+      { title: "Navigation Manager — RAFIQUE ESTUDIO OS" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

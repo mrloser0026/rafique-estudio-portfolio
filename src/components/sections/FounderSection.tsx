@@ -9,11 +9,10 @@ interface FounderSectionProps {
 
 export function FounderSection({ section }: FounderSectionProps) {
   const content = (section.content || {}) as Record<string, any>;
-  const portraitUrl =
-    "https://zcihimfisgzpeeyhdnfq.supabase.co/storage/v1/object/public/assets/main%20founderimaeg.jpeg";
+  const portraitUrl = "/images/jahanzaib-awan.jpg";
   const bio =
     content["bio"] ||
-    "Welcome! I am IMAM ESTUDIO, a Senior Full-Stack Engineer and UI/UX Architect. I help brands replace slow, template-based websites with high-performance web applications, headless eCommerce solutions, and AI-powered automation systems.";
+    "Welcome! I'm M. Jahanzaib Awan, founder of Rafique Estudio. I build high-performance digital experiences across Shopify, full-stack web applications, and AI automation.";
   const skills: string[] = content["skills"] || [
     "Custom Native Shopify Liquid",
     "Shopify Store Redesign for CRO",
@@ -32,7 +31,7 @@ export function FounderSection({ section }: FounderSectionProps) {
             <div className="relative aspect-[3/4] w-full overflow-hidden bg-muted">
               <img
                 src={portraitUrl}
-                alt="IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect"
+                alt="M. Jahanzaib Awan — Founder & Full-Stack Engineer at Rafique Estudio"
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
@@ -47,10 +46,10 @@ export function FounderSection({ section }: FounderSectionProps) {
                   </div>
                   <div>
                     <p className="font-mono text-xs font-semibold text-foreground">
-                      IMAM ESTUDIO
+                      M. Jahanzaib Awan
                     </p>
                     <p className="font-mono text-[10px] text-muted-foreground">
-                      Senior Full-Stack Engineer
+                      Founder & Full-Stack Engineer
                     </p>
                   </div>
                 </div>
@@ -64,14 +63,14 @@ export function FounderSection({ section }: FounderSectionProps) {
           <p className="eyebrow text-primary">The Engineer Behind the Work</p>
 
           <TextReveal
-            text={section.title || "IMAM ESTUDIO"}
+            text={section.title || "M. Jahanzaib Awan"}
             as="h2"
             className="display-2 mt-3 text-foreground font-display"
           />
 
           <Reveal delay={0.1}>
             <p className="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
-              {section.subtitle || "Senior Full-Stack Engineer & UI/UX Architect"}
+              {section.subtitle || "Founder & Full-Stack Engineer"}
             </p>
           </Reveal>
 

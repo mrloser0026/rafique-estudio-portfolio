@@ -12,7 +12,7 @@ import { globalSettingsQuery } from "@/lib/public-queries";
 export const Route = createFileRoute("/admin/leads")({
   head: () => ({
     meta: [
-      { title: "Leads CRM — IMAM ESTUDIO OS" },
+      { title: "Leads CRM — RAFIQUE ESTUDIO OS" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -242,7 +242,7 @@ function AdminLeadsPage() {
                 <a
                   href={whatsappUrl(
                     siteConfig.whatsapp || "",
-                    `Hi ${selectedLead.name}, following up on your ${selectedLead.project_type} inquiry with IMAM ESTUDIO.`,
+                    `Hi ${selectedLead.name}, following up on your ${selectedLead.project_type} inquiry with RAFIQUE ESTUDIO.`,
                   )}
                   target="_blank"
                   rel="noreferrer"

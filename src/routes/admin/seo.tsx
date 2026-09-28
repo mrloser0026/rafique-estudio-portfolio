@@ -8,7 +8,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/admin/seo")({
   head: () => ({
     meta: [
-      { title: "SEO Manager — IMAM ESTUDIO OS" },
+      { title: "SEO Manager — RAFIQUE ESTUDIO OS" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -77,7 +77,7 @@ function AdminSeoPage() {
             setEditing({
               route: "/",
               title:
-                "IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect",
+                "RAFIQUE ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect",
               description:
                 "Shopify commerce, AI automation pipelines, and full-stack SaaS engineering.",
               keywords: ["Shopify", "AI", "SaaS", "Engineering"],

@@ -2,9 +2,9 @@
 
 ## Infrastructure Details
 
-- **Vercel Project**: `imam-estudio-02` (Project ID: `prj_oUgZ4BJ5IiBtGWenKkApZrltYgfv`)
-- **Vercel Live URL**: `https://imam-estudio-02.vercel.app`
-- **GitHub Repository**: `nailasultanofficial-stack/IMAM-ESTUDIO-02` (`main` branch)
+- **Vercel Project**: `rafique-estudio-02` (Project ID: `prj_oUgZ4BJ5IiBtGWenKkApZrltYgfv`)
+- **Vercel Live URL**: `https://rafique-estudio-02.vercel.app`
+- **GitHub Repository**: `nailasultanofficial-stack/RAFIQUE-ESTUDIO-02` (`main` branch)
 - **Supabase PostgreSQL**: `zcihimfisgzpeeyhdnfq` (`https://zcihimfisgzpeeyhdnfq.supabase.co`)
 
 ## Deployment Pipeline

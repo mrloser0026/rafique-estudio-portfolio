@@ -17,12 +17,12 @@ export const Route = createFileRoute("/work/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Case study unavailable — IMAM ESTUDIO" },
+          { title: "Case study unavailable — RAFIQUE ESTUDIO" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
-    const title = `${loaderData.title} | Engineering Case Study — IMAM ESTUDIO`;
+    const title = `${loaderData.title} | Engineering Case Study — RAFIQUE ESTUDIO`;
     const description = loaderData.short_description || loaderData.description?.slice(0, 155) || "";
     return {
       meta: [
@@ -239,7 +239,7 @@ function ProjectDetail() {
               </Link>
 
               <a
-                href={whatsappUrl(siteConfig.whatsapp || "", `Hi ${siteConfig.founder?.split(" ")[0] || "IMAM"}, I read your case study on "${project.title}"...`)}
+                href={whatsappUrl(siteConfig.whatsapp || "", `Hi ${siteConfig.founder?.split(" ")[0] || "RAFIQUE"}, I read your case study on "${project.title}"...`)}
                 target="_blank"
                 rel="noreferrer"
                 className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-surface/50 px-6 font-mono text-xs font-semibold text-foreground transition-colors hover:border-primary/40 hover:text-primary active:scale-[0.97]"

@@ -25,7 +25,7 @@ import { GripVertical, Eye, EyeOff, Edit, Trash2, Plus, ArrowLeft } from "lucide
 export const Route = createFileRoute("/admin/pages/$pageId")({
   head: () => ({
     meta: [
-      { title: "Page Editor — IMAM ESTUDIO OS" },
+      { title: "Page Editor — RAFIQUE ESTUDIO OS" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

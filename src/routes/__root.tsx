@@ -91,32 +91,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect" },
+      { title: "Rafique Estudio — M. Jahanzaib Awan | Full-Stack Engineer" },
       {
         name: "description",
         content:
-          "IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect engineering high-conversion Shopify stores, Next.js applications, SaaS platforms, and n8n AI automations.",
+          "Rafique Estudio is the independent studio of M. Jahanzaib Awan, building high-performance Shopify experiences, full-stack applications, AI automation, and conversion-focused digital products.",
       },
-      { name: "author", content: "IMAM ESTUDIO" },
+      { name: "author", content: "M. Jahanzaib Awan" },
       {
         property: "og:title",
-        content: "IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect",
+        content: "Rafique Estudio — M. Jahanzaib Awan | Full-Stack Engineer",
       },
       {
         property: "og:description",
         content:
-          "Engineering high-conversion Shopify stores, React & Next.js platforms, SaaS applications, and n8n AI automations.",
+          "Rafique Estudio is the independent studio of M. Jahanzaib Awan, building high-performance Shopify experiences, full-stack applications, AI automation, and conversion-focused digital products.",
       },
-      { property: "og:site_name", content: "IMAM ESTUDIO Portfolio" },
+      { property: "og:site_name", content: "Rafique Estudio" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "IMAM ESTUDIO" },
+      { name: "twitter:site", content: "@rafiqueestudio" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "canonical", href: "https://rafique-estudio-portfolio.vercel.app" },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -147,6 +148,22 @@ function RootShell({ children }: { children: ReactNode }) {
             `,
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "M. Jahanzaib Awan",
+              "jobTitle": "Founder & Full-Stack Engineer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Rafique Estudio"
+              },
+              "url": "https://rafique-estudio-portfolio.vercel.app"
+            }),
+          }}
+        />
       </head>
       <body>
         <ThemeProvider defaultTheme="dark" storageKey="mj-theme">
@@ -167,7 +184,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SmoothScrollProvider>
-        {isPublic ? <CustomCursor /> : null}
         {isPublic ? <SiteHeader /> : null}
         <main id="main">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}

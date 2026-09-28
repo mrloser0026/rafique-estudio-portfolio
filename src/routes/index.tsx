@@ -8,15 +8,15 @@ export const Route = createFileRoute("/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(homepageQuery),
   head: () => ({
     meta: [
-      { title: "IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect" },
+      { title: "RAFIQUE ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect" },
       {
         name: "description",
         content:
-          "IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect. Engineering High Conversion Shopify and React Platforms, custom Next.js SaaS, and n8n AI automations.",
+          "RAFIQUE ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect. Engineering High Conversion Shopify and React Platforms, custom Next.js SaaS, and n8n AI automations.",
       },
       {
         property: "og:title",
-        content: "IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect",
+        content: "RAFIQUE ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect",
       },
       {
         property: "og:description",

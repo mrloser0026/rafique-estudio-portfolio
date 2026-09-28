@@ -56,13 +56,13 @@ export const Route = createFileRoute("/contact")({
   },
   head: () => ({
     meta: [
-      { title: "Start an Engagement — IMAM ESTUDIO" },
+      { title: "Start an Engagement — RAFIQUE ESTUDIO" },
       {
         name: "description",
         content:
-          "Start a project directly with IMAM ESTUDIO, Senior Full-Stack Engineer & UI/UX Architect.",
+          "Start a project directly with RAFIQUE ESTUDIO, Senior Full-Stack Engineer & UI/UX Architect.",
       },
-      { property: "og:title", content: "Start an Engagement — IMAM ESTUDIO" },
+      { property: "og:title", content: "Start an Engagement — RAFIQUE ESTUDIO" },
       {
         property: "og:description",
         content: "High-conversion Shopify stores, Next.js applications, and n8n AI automations.",
@@ -125,7 +125,7 @@ function ContactPage() {
           <Reveal delay={0.1}>
             <p className="lede mt-5 text-muted-foreground">
               Describe your project or business bottleneck. You will get a technical opinion and
-              transparent milestone quote directly from IMAM ESTUDIO.
+              transparent milestone quote directly from M. Jahanzaib Awan.
             </p>
           </Reveal>
 
@@ -144,7 +144,7 @@ function ContactPage() {
               <dt className="eyebrow">Instant Messenger</dt>
               <dd className="mt-1">
                 <a
-                  href={whatsappUrl(siteConfig.whatsapp || "", "Hi Malik — I'd like to discuss a project with you.")}
+                  href={whatsappUrl(siteConfig.whatsapp || "", "Hi M. Jahanzaib — I'd like to discuss a project with you.")}
                   target="_blank"
                   rel="noreferrer"
                   className="text-sm font-medium text-emerald-400 underline-offset-4 hover:underline"
@@ -268,7 +268,7 @@ function ContactPage() {
             </button>
 
             <p className="mt-4 text-center text-xs text-muted-foreground">
-              Direct submission to IMAM ESTUDIO. Zero spam, zero sales funnel sequences.
+              Direct submission to Rafique Estudio. Zero spam, zero sales funnel sequences.
             </p>
           </form>
         )}

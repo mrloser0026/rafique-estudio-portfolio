@@ -9,7 +9,7 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/admin/pages")({
   head: () => ({
     meta: [
-      { title: "Pages Manager — IMAM ESTUDIO OS" },
+      { title: "Pages Manager — RAFIQUE ESTUDIO OS" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

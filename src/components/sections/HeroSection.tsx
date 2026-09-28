@@ -14,11 +14,9 @@ export function HeroSection({ section }: HeroSectionProps) {
   const opacity = useTransform(scrollY, [0, 400], [1, 0.3]);
 
   const content = (section.content || {}) as Record<string, any>;
-  const desktopImage =
-    "https://zcihimfisgzpeeyhdnfq.supabase.co/storage/v1/object/public/assets/MALIK%20janzaib%20hero%20desktop.png";
-  const mobileImage =
-    "https://zcihimfisgzpeeyhdnfq.supabase.co/storage/v1/object/public/assets/MALIK%20janzaib%20hero%20desktop.png";
-  const eyebrow = content["eyebrow"] || "IMAM ESTUDIO";
+  const desktopImage = content["desktopImage"] || "";
+  const mobileImage = content["mobileImage"] || "";
+  const eyebrow = content["eyebrow"] || "RAFIQUE ESTUDIO";
   const primaryCtaLabel = content["primary_cta_label"] || "Start an engagement";
   const primaryCtaUrl = content["primary_cta_url"] || "/contact?source=hero_primary";
   const secondaryCtaLabel = content["secondary_cta_label"] || "Explore work";
@@ -28,16 +26,30 @@ export function HeroSection({ section }: HeroSectionProps) {
     <section className="relative min-h-[95svh] w-full overflow-hidden bg-background">
       {/* Hero Background Visual — Official Artwork First (Zero floating 3D objects/particles) */}
       <motion.div style={{ y: imageY, opacity }} className="absolute inset-0 z-0">
-        <picture>
-          <source media="(max-width: 767px)" srcSet={mobileImage} />
-          <img
-            src={desktopImage}
-            alt="IMAM ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect"
-            fetchPriority="high"
-            decoding="async"
-            className="h-full w-full object-cover object-center md:object-[70%_center] opacity-85 md:opacity-90"
-          />
-        </picture>
+        {desktopImage ? (
+          <picture>
+            <source media="(max-width: 767px)" srcSet={mobileImage || desktopImage} />
+            <img
+              src={desktopImage}
+              alt="M. Jahanzaib Awan — Founder & Full-Stack Engineer at Rafique Estudio"
+              fetchPriority="high"
+              decoding="async"
+              className="h-full w-full object-cover object-center md:object-[70%_center] opacity-85 md:opacity-90"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.parentElement?.nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+          </picture>
+        ) : null}
+        <div className={`absolute inset-0 flex items-center justify-center bg-surface-raised text-muted-foreground ${desktopImage ? 'hidden' : ''}`}>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex h-24 w-24 items-center justify-center rounded-full border border-border/80 bg-surface/50">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span className="text-xs font-medium uppercase tracking-widest opacity-60">Hero Image Pending</span>
+          </div>
+        </div>
         {/* Minimal localized readability gradient behind text only */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-transparent md:w-3/5" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
@@ -58,8 +70,11 @@ export function HeroSection({ section }: HeroSectionProps) {
 
           {/* Headline */}
           <div className="mt-6">
+            <div className="mb-4 text-xl font-medium text-muted-foreground">
+              M. Jahanzaib Awan <br/> Founder & Full-Stack Engineer
+            </div>
             <TextReveal
-              text={section.title || "Engineering High-Conversion Shopify & React Platforms."}
+              text={section.title || "I Build Digital Systems That Move Businesses Forward."}
               as="h1"
               className="display-1 text-foreground font-display tracking-tight"
             />
@@ -69,7 +84,7 @@ export function HeroSection({ section }: HeroSectionProps) {
           <Reveal delay={0.3}>
             <p className="lede mt-6 max-w-2xl text-muted-foreground">
               {section.subtitle ||
-                "Senior Full-Stack Engineer & UI/UX Architect building high-performance commerce, SaaS apps, and n8n AI automation systems."}
+                "Full-stack development, Shopify engineering, AI automation, and high-conversion digital experiences for ambitious brands."}
             </p>
           </Reveal>
 
