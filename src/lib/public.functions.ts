@@ -32,6 +32,12 @@ function publicClient() {
   });
 }
 
+
+function replaceAwan(data: any): any {
+  if (!data) return data;
+  return JSON.parse(JSON.stringify(data).replace(/Awan/g, "Rafique").replace(/awan/g, "rafique"));
+}
+
 export const getServices = createServerFn({ method: "GET" }).handler(
   async (): Promise<Service[]> => {
     const { data, error } = await publicClient()
@@ -40,7 +46,7 @@ export const getServices = createServerFn({ method: "GET" }).handler(
       .eq("is_published", true)
       .order("display_order", { ascending: true });
     if (error) throw new Error(error.message);
-    return (data ?? []) as unknown as Service[];
+    return replaceAwan((data ?? []) as unknown as Service[]);
   },
 );
 
@@ -54,7 +60,7 @@ export const getServiceBySlug = createServerFn({ method: "GET" })
       .eq("is_published", true)
       .maybeSingle();
     if (error) throw new Error(error.message);
-    return (row ?? null) as unknown as Service | null;
+    return replaceAwan((row ?? null) as unknown as Service | null);
   });
 
 export const getProjects = createServerFn({ method: "GET" }).handler(
@@ -65,7 +71,7 @@ export const getProjects = createServerFn({ method: "GET" }).handler(
       .eq("is_published", true)
       .order("display_order", { ascending: true });
     if (error) throw new Error(error.message);
-    return (data ?? []) as unknown as Project[];
+    return replaceAwan((data ?? []) as unknown as Project[]);
   },
 );
 
@@ -79,7 +85,7 @@ export const getProjectBySlug = createServerFn({ method: "GET" })
       .eq("is_published", true)
       .maybeSingle();
     if (error) throw new Error(error.message);
-    return (row ?? null) as unknown as Project | null;
+    return replaceAwan((row ?? null) as unknown as Project | null);
   });
 
 export type HomepagePayload = {
@@ -126,12 +132,12 @@ export const getHomepage = createServerFn({ method: "GET" }).handler(
     if (servicesResult.error) throw new Error(servicesResult.error.message);
     if (projectsResult.error) throw new Error(projectsResult.error.message);
 
-    return {
+    return replaceAwan({
       page: (page ?? null) as unknown as SitePage | null,
       sections: (sectionsResult.data ?? []) as unknown as PageSection[],
       services: (servicesResult.data ?? []) as unknown as Service[],
       projects: (projectsResult.data ?? []) as unknown as Project[],
-    };
+    });
   },
 );
 
@@ -144,7 +150,7 @@ export const getSeoForRoute = createServerFn({ method: "GET" })
       .eq("route", data.route)
       .maybeSingle();
     if (error) throw new Error(error.message);
-    return (row ?? null) as unknown as SeoSetting | null;
+    return replaceAwan((row ?? null) as unknown as SeoSetting | null);
   });
 
 /** Custom pages built in the admin CMS. */
@@ -169,10 +175,10 @@ export const getCustomPage = createServerFn({ method: "GET" })
       .order("display_order", { ascending: true });
     if (sectionError) throw new Error(sectionError.message);
 
-    return {
+    return replaceAwan({
       page: page as unknown as SitePage,
       sections: (sections ?? []) as unknown as PageSection[],
-    };
+    });
   });
 
 export const leadSchema = z.object({
@@ -219,7 +225,7 @@ export const getGlobalSettings = createServerFn({ method: "GET" }).handler(
     rows?.forEach((r: any) => {
       settings[r.key] = r.value;
     });
-    return settings;
+    return replaceAwan(settings);
   },
 );
 
