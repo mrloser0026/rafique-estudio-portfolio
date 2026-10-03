@@ -24,8 +24,9 @@ export function HeroSection({ section }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-[95svh] w-full overflow-hidden bg-background">
-      {/* Hero Background Visual — Official Artwork First (Zero floating 3D objects/particles) */}
-      <motion.div style={{ y: imageY, opacity }} className="absolute inset-0 z-0">
+      {/* Hero Background Visual */}
+      <motion.div style={{ y: imageY, opacity }} className="absolute inset-0 z-0 bg-background overflow-hidden">
+        {/* Fallback / Poster Image */}
         {desktopImage ? (
           <picture>
             <source media="(max-width: 767px)" srcSet={mobileImage || desktopImage} />
@@ -34,25 +35,37 @@ export function HeroSection({ section }: HeroSectionProps) {
               alt="M. Jahanzaib Rafique — Founder & Full-Stack Engineer at Rafique Estudio"
               fetchPriority="high"
               decoding="async"
-              className="h-full w-full object-cover object-center md:object-[70%_center] opacity-85 md:opacity-90"
+              className="absolute inset-0 h-full w-full object-cover object-center md:object-[70%_center] opacity-85 md:opacity-90"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement?.nextElementSibling?.classList.remove('hidden');
               }}
             />
           </picture>
-        ) : null}
-        <div className={`absolute inset-0 flex items-center justify-center bg-surface-raised text-muted-foreground ${desktopImage ? 'hidden' : ''}`}>
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex h-24 w-24 items-center justify-center rounded-full border border-border/80 bg-surface/50">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-surface-raised text-muted-foreground">
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-border/80 bg-surface/50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <span className="text-xs font-medium uppercase tracking-widest opacity-60">Hero Image Pending</span>
             </div>
-            <span className="text-xs font-medium uppercase tracking-widest opacity-60">Hero Image Pending</span>
           </div>
-        </div>
+        )}
+
+        {/* Background Video (plays on top of fallback, pointer-events-none ensures no interaction interference) */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover object-center md:object-[70%_center] opacity-85 md:opacity-90 pointer-events-none"
+        >
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
+        </video>
+
         {/* Minimal localized readability gradient behind text only */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-transparent md:w-3/5" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent md:w-3/5 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30 pointer-events-none" />
       </motion.div>
 
       {/* Hero Viewport Content */}
