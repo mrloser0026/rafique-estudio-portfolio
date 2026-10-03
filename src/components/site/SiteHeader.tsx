@@ -59,7 +59,17 @@ export function SiteHeader() {
     >
       <div className="shell flex h-16 items-center justify-between gap-6 md:h-[4.5rem]">
         {/* Logo */}
-        <Link to="/" className="group flex items-baseline gap-2" aria-label={`${siteConfig.name} home`}>
+        <Link 
+          to="/" 
+          className="group flex items-baseline gap-2" 
+          aria-label={`${siteConfig.name} home`}
+          onClick={(e) => {
+            if (pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        >
           <span className="font-display text-lg font-bold tracking-tight text-foreground md:text-xl uppercase">
             {siteConfig.name?.split(' ')[0] || "RAFIQUE"}
           </span>
@@ -75,8 +85,14 @@ export function SiteHeader() {
             return (
               <Link
                 key={link.to}
-                to={link.to}
+                to={link.to as any}
                 aria-current={isActive ? "page" : undefined}
+                onClick={(e) => {
+                  if (pathname === link.to) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }}
                 className={cn(
                   "relative text-sm transition-colors hover:text-foreground",
                   isActive ? "text-foreground font-medium" : "text-muted-foreground",
@@ -130,7 +146,14 @@ export function SiteHeader() {
               return (
                 <Link
                   key={link.to}
-                  to={link.to}
+                  to={link.to as any}
+                  onClick={(e) => {
+                    setOpen(false);
+                    if (pathname === link.to) {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
                     "flex min-h-[48px] items-center border-b border-border/60 text-base transition-colors",
