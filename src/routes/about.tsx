@@ -71,7 +71,7 @@ function AboutPage() {
           <TextReveal
             text="M. Jahanzaib Rafique"
             as="h1"
-            className="display-1 mt-3 text-foreground font-display"
+            className="display-1 mt-3 text-primary font-display"
           />
           <Reveal delay={0.1}>
             <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-emerald-400 font-semibold">
@@ -147,7 +147,7 @@ function AboutPage() {
                   </div>
                 </div>
 
-                <p className="mt-4 font-display text-2xl font-semibold text-foreground">
+                <p className="mt-4 font-display text-2xl font-semibold text-primary">
                   {siteConfig.founder}
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">{siteConfig.role}</p>

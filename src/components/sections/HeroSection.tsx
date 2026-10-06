@@ -64,8 +64,8 @@ export function HeroSection({ section }: HeroSectionProps) {
         </video>
 
         {/* Minimal localized readability gradient behind text only */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent md:w-3/5 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent light:from-background/70 light:via-background/30 md:w-3/5 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30 light:from-background/80 light:to-transparent pointer-events-none" />
       </motion.div>
 
       {/* Hero Viewport Content */}
@@ -84,12 +84,12 @@ export function HeroSection({ section }: HeroSectionProps) {
           {/* Headline */}
           <div className="mt-6">
             <div className="mb-4 text-xl font-medium text-muted-foreground">
-              M. Jahanzaib Rafique <br/> Founder & Full-Stack Engineer
+              <span className="text-primary font-semibold">M. Jahanzaib Rafique</span> <br/> Founder & Full-Stack Engineer
             </div>
             <TextReveal
               text={section.title || "I Build Digital Systems That Move Businesses Forward."}
               as="h1"
-              className="display-1 text-foreground font-display tracking-tight"
+              className="display-2 text-foreground font-display tracking-tight"
             />
           </div>
 

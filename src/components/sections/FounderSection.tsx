@@ -45,7 +45,7 @@ export function FounderSection({ section }: FounderSectionProps) {
                     <Terminal className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="font-mono text-xs font-semibold text-foreground">
+                    <p className="font-mono text-xs font-semibold text-primary">
                       M. Jahanzaib Rafique
                     </p>
                     <p className="font-mono text-[10px] text-muted-foreground">
@@ -65,7 +65,7 @@ export function FounderSection({ section }: FounderSectionProps) {
           <TextReveal
             text={section.title || "M. Jahanzaib Rafique"}
             as="h2"
-            className="display-2 mt-3 text-foreground font-display"
+            className="display-2 mt-3 text-primary font-display"
           />
 
           <Reveal delay={0.1}>
