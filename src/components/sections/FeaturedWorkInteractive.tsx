@@ -52,8 +52,14 @@ export function FeaturedWorkInteractive({ projects }: { projects: Project[] }) {
     });
   }, [projects]);
 
+  const isInitialMount = useRef(true);
+
   // Scroll active item into view when activeProjectIndex changes
   useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
     const activeBtn = itemRefs.current[activeProjectIndex];
     if (activeBtn && navRailRef.current) {
       activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
