@@ -89,7 +89,7 @@ export function HeroSection({ section }: HeroSectionProps) {
             <TextReveal
               text={section.title || "I Build Digital Systems That Move Businesses Forward."}
               as="h1"
-              className="display-2 text-foreground font-display tracking-tight"
+              className="text-[clamp(1.75rem,5vw,4rem)] leading-[1.05] text-foreground font-display tracking-tight"
             />
           </div>
 
