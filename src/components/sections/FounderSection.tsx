@@ -9,7 +9,7 @@ interface FounderSectionProps {
 
 export function FounderSection({ section }: FounderSectionProps) {
   const content = (section.content || {}) as Record<string, any>;
-  const portraitUrl = "/images/jahanzaib-rafique.jpg";
+  const portraitUrl = "/images/1.jpeg";
   const bio =
     content["bio"] ||
     "Welcome! I'm M. Jahanzaib Rafique, founder of Rafique Estudio. I build high-performance digital experiences across Shopify, full-stack web applications, and AI automation.";
