@@ -128,7 +128,7 @@ function AboutPage() {
                 <div className="mt-4 aspect-[4/5] w-full overflow-hidden rounded-xl bg-muted border border-border/80">
                   {true ? (
                     <img
-                      src="/images/4.jpeg"
+                      src="/images/2.jpeg"
                       alt="M. Jahanzaib Rafique — Founder & Full-Stack Engineer at Rafique Estudio"
                       loading="lazy"
                       decoding="async"
