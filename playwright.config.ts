@@ -18,9 +18,11 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "bun run dev",
+    command: "bun run dev --port 5173 --strictPort",
     url: "http://localhost:5173",
     reuseExistingServer: !process.env.CI,
+    timeout: 120000,
+  }
     timeout: 120000,
   }
 });
