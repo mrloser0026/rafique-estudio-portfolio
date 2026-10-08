@@ -12,10 +12,10 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  
+
   const { data: globalSettings } = useSuspenseQuery(globalSettingsQuery);
-  const siteConfig = globalSettings?.['site_config'] || {};
-  const navLinks = globalSettings?.['nav_links'] || [];
+  const siteConfig = globalSettings?.["site_config"] || {};
+  const navLinks = globalSettings?.["nav_links"] || [];
 
   // Scroll state — backdrop/border on scroll
   useEffect(() => {
@@ -59,9 +59,9 @@ export function SiteHeader() {
     >
       <div className="shell flex h-16 items-center justify-between gap-6 md:h-[4.5rem]">
         {/* Logo */}
-        <Link 
-          to="/" 
-          className="group flex items-baseline gap-2" 
+        <Link
+          to="/"
+          className="group flex items-baseline gap-2"
           aria-label={`${siteConfig.name} home`}
           onClick={(e) => {
             if (pathname === "/") {
@@ -71,16 +71,16 @@ export function SiteHeader() {
           }}
         >
           <span className="font-display text-lg font-bold tracking-tight text-foreground md:text-xl uppercase">
-            {siteConfig.name?.split(' ')[0] || "RAFIQUE"}
+            {siteConfig.name?.split(" ")[0] || "RAFIQUE"}
           </span>
           <span className="eyebrow text-primary transition-colors group-hover:text-foreground uppercase">
-            {siteConfig.name?.split(' ').slice(1).join(' ') || "ESTUDIO"}
+            {siteConfig.name?.split(" ").slice(1).join(" ") || "ESTUDIO"}
           </span>
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
-          {navLinks.map((link: { label: string, to: string }) => {
+          {navLinks.map((link: { label: string; to: string }) => {
             const isActive = pathname === link.to || pathname.startsWith(link.to + "/");
             return (
               <Link
@@ -141,7 +141,7 @@ export function SiteHeader() {
           aria-label="Mobile navigation"
         >
           <nav className="shell flex flex-col py-3">
-            {navLinks.map((link: { label: string, to: string }) => {
+            {navLinks.map((link: { label: string; to: string }) => {
               const isActive = pathname === link.to || pathname.startsWith(link.to + "/");
               return (
                 <Link

@@ -32,8 +32,6 @@ function publicClient() {
   });
 }
 
-
-
 export const getServices = createServerFn({ method: "GET" }).handler(
   async (): Promise<Service[]> => {
     const { data, error } = await publicClient()
@@ -224,4 +222,3 @@ export const getGlobalSettings = createServerFn({ method: "GET" }).handler(
     return settings;
   },
 );
-

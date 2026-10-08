@@ -137,7 +137,9 @@ function AdminThemeEditorPage() {
           <button
             onClick={() => setPreviewMode("desktop")}
             className={`flex items-center gap-1.5 rounded px-3 py-1.5 text-xs font-mono transition-colors ${
-              previewMode === "desktop" ? "bg-surface-raised text-foreground font-semibold" : "text-muted-foreground"
+              previewMode === "desktop"
+                ? "bg-surface-raised text-foreground font-semibold"
+                : "text-muted-foreground"
             }`}
           >
             <Monitor className="h-3.5 w-3.5" />
@@ -146,7 +148,9 @@ function AdminThemeEditorPage() {
           <button
             onClick={() => setPreviewMode("mobile")}
             className={`flex items-center gap-1.5 rounded px-3 py-1.5 text-xs font-mono transition-colors ${
-              previewMode === "mobile" ? "bg-surface-raised text-foreground font-semibold" : "text-muted-foreground"
+              previewMode === "mobile"
+                ? "bg-surface-raised text-foreground font-semibold"
+                : "text-muted-foreground"
             }`}
           >
             <Smartphone className="h-3.5 w-3.5" />

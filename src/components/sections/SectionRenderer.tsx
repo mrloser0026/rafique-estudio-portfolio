@@ -226,7 +226,10 @@ function FinalCta({ section, siteConfig }: { section: PageSection; siteConfig?: 
             </Link>
             {wa ? (
               <a
-                href={whatsappUrl(wa, `Hi ${founderName} — I'd like to discuss a project with you.`)}
+                href={whatsappUrl(
+                  wa,
+                  `Hi ${founderName} — I'd like to discuss a project with you.`,
+                )}
                 target="_blank"
                 rel="noreferrer"
               >

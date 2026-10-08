@@ -71,7 +71,9 @@ function AdminPagesPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-foreground tracking-tight">Page Builder & CMS Pages</h1>
+          <h1 className="text-2xl font-bold text-foreground tracking-tight">
+            Page Builder & CMS Pages
+          </h1>
           <p className="mt-1 text-xs text-muted-foreground font-mono">
             Manage system routes and dynamic CMS pages in PostgreSQL.
           </p>
@@ -170,7 +172,10 @@ function AdminPagesPage() {
               <h2 className="text-lg font-bold text-foreground">
                 {editing.id ? "Edit Page" : "Create Page"}
               </h2>
-              <button onClick={() => setEditing(null)} className="text-muted-foreground hover:text-foreground">
+              <button
+                onClick={() => setEditing(null)}
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -190,7 +195,9 @@ function AdminPagesPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase text-muted-foreground">Slug</label>
+                <label className="block text-xs font-mono uppercase text-muted-foreground">
+                  Slug
+                </label>
                 <input
                   type="text"
                   required
@@ -201,7 +208,9 @@ function AdminPagesPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase text-muted-foreground">SEO Title</label>
+                <label className="block text-xs font-mono uppercase text-muted-foreground">
+                  SEO Title
+                </label>
                 <input
                   type="text"
                   value={editing.seo_title || ""}

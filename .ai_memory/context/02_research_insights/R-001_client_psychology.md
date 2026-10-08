@@ -15,6 +15,7 @@ source: [internal]
 Clients look for reliability, performance, and aesthetic excellence in engineering portfolios.
 
 **2. Details**
+
 - **Behavioral landscape**: Decision makers want to see past work quickly.
 - **Design requirements**: High-end animations (motion-primitives), fast load times.
 
@@ -22,4 +23,5 @@ Clients look for reliability, performance, and aesthetic excellence in engineeri
 Guides UX/UI decisions on the portfolio.
 
 **4. Change Log**
+
 - Initialized memory layer.

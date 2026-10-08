@@ -15,10 +15,12 @@ source: [internal]
 Standard GDPR compliance for lead collection.
 
 **2. Details**
+
 - **Mandates**: Privacy policy required if collecting emails.
 
 **3. Why it matters**
 Legal safety.
 
 **4. Change Log**
+
 - Initialized memory layer.

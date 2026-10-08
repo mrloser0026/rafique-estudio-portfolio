@@ -29,7 +29,7 @@ export function ThemeSwitcher() {
           "flex h-7 w-7 items-center justify-center rounded-full transition-all active:scale-[0.97]",
           theme === "light"
             ? "bg-foreground text-background shadow-sm"
-            : "text-muted-foreground hover:bg-surface-raised hover:text-foreground"
+            : "text-muted-foreground hover:bg-surface-raised hover:text-foreground",
         )}
         aria-label="Light theme"
         title="Light theme"
@@ -42,7 +42,7 @@ export function ThemeSwitcher() {
           "flex h-7 w-7 items-center justify-center rounded-full transition-all active:scale-[0.97]",
           theme === "dark"
             ? "bg-foreground text-background shadow-sm"
-            : "text-muted-foreground hover:bg-surface-raised hover:text-foreground"
+            : "text-muted-foreground hover:bg-surface-raised hover:text-foreground",
         )}
         aria-label="Dark theme"
         title="Dark theme"
@@ -55,7 +55,7 @@ export function ThemeSwitcher() {
           "flex h-7 w-7 items-center justify-center rounded-full transition-all active:scale-[0.97]",
           theme === "alt"
             ? "bg-foreground text-background shadow-sm"
-            : "text-muted-foreground hover:bg-surface-raised hover:text-foreground"
+            : "text-muted-foreground hover:bg-surface-raised hover:text-foreground",
         )}
         aria-label="Alternate theme"
         title="Alternate theme"

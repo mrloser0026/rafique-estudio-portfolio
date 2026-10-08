@@ -28,9 +28,9 @@ export function ServiceCard({ service, index }: { service: Service; index?: numb
         {/* Remote Service Image (Uncropped) */}
         {service.image_url && (
           <div className="w-full bg-surface-raised/40 border-b border-border/40 overflow-hidden aspect-video">
-            <img 
-              src={service.image_url} 
-              alt={service.title} 
+            <img
+              src={service.image_url}
+              alt={service.title}
               className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.03]"
               loading="lazy"
             />
@@ -66,7 +66,7 @@ export function ServiceCard({ service, index }: { service: Service; index?: numb
               <span>Explore</span>
               <ArrowRight className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5" />
             </div>
-            
+
             {/* Embedded Fiverr CTA - Clickable without triggering the wrapper Link since it's absolutely positioned or z-indexed if needed, wait, we actually need to pull it out of the Link to avoid nesting! */}
           </div>
         </div>

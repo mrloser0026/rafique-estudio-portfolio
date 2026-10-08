@@ -15,6 +15,7 @@ source: [internal]
 Handling live production incidents.
 
 **2. Details**
+
 - **Tier 1 (Soft Halt)**: Revert Vercel deployment.
 - **Tier 2 (DB Rollback)**: Restore Supabase backup.
 
@@ -22,4 +23,5 @@ Handling live production incidents.
 Ensures fast recovery from breaking changes.
 
 **4. Change Log**
+
 - Initialized memory layer.

@@ -6,7 +6,6 @@ import { Save, Navigation, Plus, Trash2 } from "lucide-react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { globalSettingsQuery } from "@/lib/public-queries";
 
-
 export const Route = createFileRoute("/admin/navigation")({
   head: () => ({
     meta: [
@@ -26,8 +25,10 @@ function AdminNavigationPage() {
 
   const load = async () => {
     try {
-      const navLinks = settingsData?.['nav_links']
-        ? (typeof settingsData['nav_links'] === "string" ? JSON.parse(settingsData['nav_links']) : settingsData['nav_links'])
+      const navLinks = settingsData?.["nav_links"]
+        ? typeof settingsData["nav_links"] === "string"
+          ? JSON.parse(settingsData["nav_links"])
+          : settingsData["nav_links"]
         : [];
       setLinks(Array.isArray(navLinks) ? navLinks : []);
     } catch (e: any) {
@@ -48,7 +49,7 @@ function AdminNavigationPage() {
       await updateAdminGlobalSetting({
         data: {
           key: "nav_links",
-          value: links.filter(l => l.label.trim() !== "" && l.to.trim() !== ""),
+          value: links.filter((l) => l.label.trim() !== "" && l.to.trim() !== ""),
         },
       });
       toast.success("Navigation links updated");
@@ -76,7 +77,8 @@ function AdminNavigationPage() {
     setLinks(newLinks);
   };
 
-  if (loading) return <p className="text-xs font-mono text-muted-foreground py-8">Loading navigation...</p>;
+  if (loading)
+    return <p className="text-xs font-mono text-muted-foreground py-8">Loading navigation...</p>;
 
   return (
     <div className="space-y-6 max-w-4xl">
@@ -103,7 +105,7 @@ function AdminNavigationPage() {
             Add Link
           </button>
         </div>
-        
+
         <form onSubmit={handleSave} className="space-y-4">
           <div className="space-y-3">
             {links.map((link, index) => (

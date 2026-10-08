@@ -6,8 +6,8 @@ import { globalSettingsQuery } from "@/lib/public-queries";
 
 export function SiteFooter() {
   const { data: globalSettings } = useSuspenseQuery(globalSettingsQuery);
-  const siteConfig = globalSettings?.['site_config'] || {};
-  const navLinks = globalSettings?.['nav_links'] || [];
+  const siteConfig = globalSettings?.["site_config"] || {};
+  const navLinks = globalSettings?.["nav_links"] || [];
 
   const year = new Date().getFullYear();
 
@@ -16,22 +16,31 @@ export function SiteFooter() {
       <div className="shell py-16">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-          <Link to="/" className="inline-flex items-baseline gap-2 hover:opacity-80 transition-opacity">
-              <span className="font-display text-xl font-bold text-foreground uppercase">{siteConfig.name?.split(' ')[0] || "RAFIQUE"}</span>
-              <span className="eyebrow text-primary uppercase">{siteConfig.name?.split(' ').slice(1).join(' ') || "ESTUDIO"}</span>
+            <Link
+              to="/"
+              className="inline-flex items-baseline gap-2 hover:opacity-80 transition-opacity"
+            >
+              <span className="font-display text-xl font-bold text-foreground uppercase">
+                {siteConfig.name?.split(" ")[0] || "RAFIQUE"}
+              </span>
+              <span className="eyebrow text-primary uppercase">
+                {siteConfig.name?.split(" ").slice(1).join(" ") || "ESTUDIO"}
+              </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Digital engineering studio founded by M. Jahanzaib Rafique, building high-performance Shopify, full-stack, SaaS, and AI automation solutions.
+              Digital engineering studio founded by M. Jahanzaib Rafique, building high-performance
+              Shopify, full-stack, SaaS, and AI automation solutions.
             </p>
             <p className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              {siteConfig.founder} {siteConfig.handle ? `· ${siteConfig.handle} ` : ''}· {siteConfig.location}
+              {siteConfig.founder} {siteConfig.handle ? `· ${siteConfig.handle} ` : ""}·{" "}
+              {siteConfig.location}
             </p>
           </div>
 
           <nav aria-label="Footer">
             <h2 className="eyebrow">Portfolio</h2>
             <ul className="mt-4 space-y-3">
-              {navLinks.map((link: { label: string, to: string }) => (
+              {navLinks.map((link: { label: string; to: string }) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
@@ -66,7 +75,7 @@ export function SiteFooter() {
                   rel="noreferrer"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  WhatsApp {siteConfig.handle ? `(${siteConfig.handle})` : ''}
+                  WhatsApp {siteConfig.handle ? `(${siteConfig.handle})` : ""}
                 </a>
               </li>
               <li>
@@ -82,9 +91,7 @@ export function SiteFooter() {
         </div>
 
         <div className="hairline mt-14 flex flex-col gap-3 pt-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <p>
-            © 2026 RAFIQUE ESTUDIO. All rights reserved.
-          </p>
+          <p>© 2026 RAFIQUE ESTUDIO. All rights reserved.</p>
           <p className="font-mono uppercase tracking-[0.16em]">
             Engineering High Conversion Platforms
           </p>

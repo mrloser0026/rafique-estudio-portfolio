@@ -7,7 +7,7 @@ test.describe("Public Website Connections", () => {
     // The data might actually contain "Awan" now, or "Rafique Estudio".
     // We just want to ensure the page loads without JS errors and has basic content.
     await expect(page).toHaveTitle(/RAFIQUE ESTUDIO/i);
-    
+
     // Check if the hero section is visible
     const hero = page.locator("section").first();
     await expect(hero).toBeVisible();

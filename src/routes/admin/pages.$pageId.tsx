@@ -119,7 +119,7 @@ function PageEditor() {
     }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
-    })
+    }),
   );
 
   useEffect(() => {
@@ -144,13 +144,13 @@ function PageEditor() {
         const oldIndex = items.findIndex((i) => i.id === active.id);
         const newIndex = items.findIndex((i) => i.id === over.id);
         const newItems = arrayMove(items, oldIndex, newIndex);
-        
+
         // Update display_order internally
         const updatedItems = newItems.map((item, index) => ({
           ...item,
           display_order: index,
         }));
-        
+
         setHasChanges(true);
         return updatedItems;
       });
@@ -180,9 +180,7 @@ function PageEditor() {
   };
 
   const toggleVisibility = (id: string) => {
-    setSections((prev) =>
-      prev.map((s) => (s.id === id ? { ...s, is_visible: !s.is_visible } : s))
-    );
+    setSections((prev) => prev.map((s) => (s.id === id ? { ...s, is_visible: !s.is_visible } : s)));
     setHasChanges(true);
   };
 
@@ -211,9 +209,7 @@ function PageEditor() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button
-            className="flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-xs font-semibold text-muted-foreground hover:bg-surface-raised"
-          >
+          <button className="flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-xs font-semibold text-muted-foreground hover:bg-surface-raised">
             <Plus className="h-4 w-4" />
             <span>Add Section</span>
           </button>
@@ -244,7 +240,10 @@ function PageEditor() {
             collisionDetection={closestCenter}
             onDragEnd={handleDragEnd}
           >
-            <SortableContext items={sections.map((s) => s.id)} strategy={verticalListSortingStrategy}>
+            <SortableContext
+              items={sections.map((s) => s.id)}
+              strategy={verticalListSortingStrategy}
+            >
               <div className="flex flex-col gap-3">
                 {sections.map((section) => (
                   <SortableSectionItem

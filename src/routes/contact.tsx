@@ -74,7 +74,7 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const { data: globalSettings } = useSuspenseQuery(globalSettingsQuery);
-  const siteConfig = globalSettings?.['site_config'] || {};
+  const siteConfig = globalSettings?.["site_config"] || {};
   const { source } = Route.useSearch();
   const navigate = useNavigate();
   const send = useServerFn(submitLead);
@@ -137,14 +137,17 @@ function ContactPage() {
             <div>
               <dt className="eyebrow">Engineer Accountable</dt>
               <dd className="mt-1 text-sm font-medium text-foreground">
-                {siteConfig.founder} {siteConfig.handle ? `(${siteConfig.handle})` : ''}
+                {siteConfig.founder} {siteConfig.handle ? `(${siteConfig.handle})` : ""}
               </dd>
             </div>
             <div>
               <dt className="eyebrow">Instant Messenger</dt>
               <dd className="mt-1">
                 <a
-                  href={whatsappUrl(siteConfig.whatsapp || "", "Hi M. Jahanzaib — I'd like to discuss a project with you.")}
+                  href={whatsappUrl(
+                    siteConfig.whatsapp || "",
+                    "Hi M. Jahanzaib — I'd like to discuss a project with you.",
+                  )}
                   target="_blank"
                   rel="noreferrer"
                   className="text-sm font-medium text-emerald-400 underline-offset-4 hover:underline"

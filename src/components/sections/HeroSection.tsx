@@ -26,7 +26,10 @@ export function HeroSection({ section }: HeroSectionProps) {
   return (
     <section className="relative min-h-[95svh] w-full overflow-hidden bg-background">
       {/* Hero Background Visual */}
-      <motion.div style={{ y: imageY, opacity }} className="absolute inset-0 z-0 bg-background overflow-hidden">
+      <motion.div
+        style={{ y: imageY, opacity }}
+        className="absolute inset-0 z-0 bg-background overflow-hidden"
+      >
         {/* Background Video (plays on top of fallback, pointer-events-none ensures no interaction interference) */}
         <video
           autoPlay
@@ -59,7 +62,8 @@ export function HeroSection({ section }: HeroSectionProps) {
           {/* Headline */}
           <div className="mt-6">
             <div className="mb-4 text-xl font-medium text-muted-foreground">
-              <span className="text-primary font-semibold">M. Jahanzaib Rafique</span> <br/> Founder & Full-Stack Engineer
+              <span className="text-primary font-semibold">M. Jahanzaib Rafique</span> <br />{" "}
+              Founder & Full-Stack Engineer
             </div>
             <TextReveal
               text={section.title || "I Build Digital Systems That Move Businesses Forward."}
@@ -78,7 +82,14 @@ export function HeroSection({ section }: HeroSectionProps) {
 
           <Reveal delay={0.5}>
             <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
-              <Link to={primaryCtaUrl.split('?')[0] as any} search={primaryCtaUrl.includes('?') ? (Object.fromEntries(new URLSearchParams(primaryCtaUrl.split('?')[1])) as any) : undefined}>
+              <Link
+                to={primaryCtaUrl.split("?")[0] as any}
+                search={
+                  primaryCtaUrl.includes("?")
+                    ? (Object.fromEntries(new URLSearchParams(primaryCtaUrl.split("?")[1])) as any)
+                    : undefined
+                }
+              >
                 <MagneticButton className="h-12 rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:opacity-95 active:scale-[0.97]">
                   {primaryCtaLabel}
                 </MagneticButton>

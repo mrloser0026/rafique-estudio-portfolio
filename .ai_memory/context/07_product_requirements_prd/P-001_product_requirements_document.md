@@ -15,7 +15,8 @@ source: [internal]
 PRD for Rafique Estudio Portfolio.
 
 **2. Details**
-- **Epics**: 
+
+- **Epics**:
   - Dynamic Homepage.
   - Case Studies (Projects).
   - Services Overview.
@@ -26,4 +27,5 @@ PRD for Rafique Estudio Portfolio.
 Defines boundaries.
 
 **4. Change Log**
+
 - Initialized memory layer.

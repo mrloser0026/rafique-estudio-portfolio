@@ -56,7 +56,7 @@ function AdminServicesPage() {
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
-    })
+    }),
   );
 
   const handleDragEnd = async (event: DragEndEvent) => {
@@ -66,39 +66,39 @@ function AdminServicesPage() {
         const oldIndex = items.findIndex((i) => i.id === active.id);
         const newIndex = items.findIndex((i) => i.id === over.id);
         const newItems = arrayMove(items, oldIndex, newIndex);
-        
+
         const saveOrder = async () => {
-           try {
-             const promises = newItems.map((item, index) => {
-               return upsertAdminService({ 
-                 data: { 
-                   id: item.id,
-                   title: item.title,
-                   slug: item.slug,
-                   gig_id: item.gig_id,
-                   category: item.category,
-                   short_description: item.short_description,
-                   full_description: item.full_description,
-                   starting_price: item.starting_price,
-                   hourly_rate: item.hourly_rate,
-                   features: item.features,
-                   tech_stack: item.tech_stack,
-                   image_url: item.image_url,
-                   cta_label: item.cta_label,
-                   is_featured: item.is_featured,
-                   is_published: item.is_published,
-                   display_order: index + 1 
-                 } 
-               });
-             });
-             await Promise.all(promises);
-           } catch(e: any) {
-             toast.error("Failed to update ordering: " + e.message);
-             load(); 
-           }
+          try {
+            const promises = newItems.map((item, index) => {
+              return upsertAdminService({
+                data: {
+                  id: item.id,
+                  title: item.title,
+                  slug: item.slug,
+                  gig_id: item.gig_id,
+                  category: item.category,
+                  short_description: item.short_description,
+                  full_description: item.full_description,
+                  starting_price: item.starting_price,
+                  hourly_rate: item.hourly_rate,
+                  features: item.features,
+                  tech_stack: item.tech_stack,
+                  image_url: item.image_url,
+                  cta_label: item.cta_label,
+                  is_featured: item.is_featured,
+                  is_published: item.is_published,
+                  display_order: index + 1,
+                },
+              });
+            });
+            await Promise.all(promises);
+          } catch (e: any) {
+            toast.error("Failed to update ordering: " + e.message);
+            load();
+          }
         };
         saveOrder();
-        
+
         return newItems;
       });
     }
@@ -211,14 +211,19 @@ function AdminServicesPage() {
                   <th className="p-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <SortableContext items={services.map((s) => s.id)} strategy={verticalListSortingStrategy}>
+              <SortableContext
+                items={services.map((s) => s.id)}
+                strategy={verticalListSortingStrategy}
+              >
                 <tbody className="divide-y divide-zinc-800/60">
                   {services.map((s) => (
                     <SortableRow key={s.id} id={s.id}>
                       <td className="p-4 font-mono text-muted-foreground">{s.display_order}</td>
                       <td className="p-4 font-semibold text-foreground">
                         <div>{s.title}</div>
-                        <div className="text-[0.65rem] font-mono text-muted-foreground">/{s.slug}</div>
+                        <div className="text-[0.65rem] font-mono text-muted-foreground">
+                          /{s.slug}
+                        </div>
                       </td>
                       <td className="p-4 text-muted-foreground">{s.category}</td>
                       <td className="p-4 font-mono text-primary">
@@ -275,7 +280,10 @@ function AdminServicesPage() {
               <h2 className="text-lg font-bold text-foreground">
                 {editing.id ? "Edit Service Capability" : "Create New Capability"}
               </h2>
-              <button onClick={() => setEditing(null)} className="text-muted-foreground hover:text-foreground">
+              <button
+                onClick={() => setEditing(null)}
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -283,7 +291,9 @@ function AdminServicesPage() {
             <form onSubmit={handleSave} className="mt-6 space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono uppercase text-muted-foreground">Title</label>
+                  <label className="block text-xs font-mono uppercase text-muted-foreground">
+                    Title
+                  </label>
                   <input
                     type="text"
                     required
@@ -293,7 +303,9 @@ function AdminServicesPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono uppercase text-muted-foreground">Slug</label>
+                  <label className="block text-xs font-mono uppercase text-muted-foreground">
+                    Slug
+                  </label>
                   <input
                     type="text"
                     required
@@ -394,7 +406,10 @@ function AdminServicesPage() {
                     onChange={(e) =>
                       setEditing({
                         ...editing,
-                        features: e.target.value.split(",").map((t) => t.trim()).filter(Boolean),
+                        features: e.target.value
+                          .split(",")
+                          .map((t) => t.trim())
+                          .filter(Boolean),
                       })
                     }
                     className="mt-1 w-full rounded border border-border bg-surface p-2 text-sm text-foreground"
@@ -410,7 +425,10 @@ function AdminServicesPage() {
                     onChange={(e) =>
                       setEditing({
                         ...editing,
-                        tech_stack: e.target.value.split(",").map((t) => t.trim()).filter(Boolean),
+                        tech_stack: e.target.value
+                          .split(",")
+                          .map((t) => t.trim())
+                          .filter(Boolean),
                       })
                     }
                     className="mt-1 w-full rounded border border-border bg-surface p-2 text-sm text-foreground"

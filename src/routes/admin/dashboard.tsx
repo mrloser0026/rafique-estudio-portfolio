@@ -64,11 +64,11 @@ function AdminDashboardPage() {
             <span className="text-xs font-mono uppercase tracking-wider">Total Leads</span>
             <Users className="h-5 w-5 text-primary" />
           </div>
-          <p className="mt-3 text-3xl font-bold text-foreground">{metrics?.leadCounts.total ?? 0}</p>
+          <p className="mt-3 text-3xl font-bold text-foreground">
+            {metrics?.leadCounts.total ?? 0}
+          </p>
           <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
-            <span className="text-primary font-semibold">
-              +{metrics?.leadCounts.new ?? 0} New
-            </span>
+            <span className="text-primary font-semibold">+{metrics?.leadCounts.new ?? 0} New</span>
             <span>in pipeline</span>
           </div>
         </div>
@@ -117,32 +117,42 @@ function AdminDashboardPage() {
               <p className="text-xl font-bold text-primary">{metrics?.leadCounts.new ?? 0}</p>
             </div>
             <div className="rounded-lg border border-border bg-background p-3 text-center">
-              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">Contacted</span>
+              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">
+                Contacted
+              </span>
               <p className="text-xl font-bold text-blue-400">
                 {metrics?.leadCounts.contacted ?? 0}
               </p>
             </div>
             <div className="rounded-lg border border-border bg-background p-3 text-center">
-              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">Scoping</span>
+              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">
+                Scoping
+              </span>
               <p className="text-xl font-bold text-amber-400">
                 {metrics?.leadCounts.inScoping ?? 0}
               </p>
             </div>
             <div className="rounded-lg border border-border bg-background p-3 text-center">
-              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">Proposal</span>
+              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">
+                Proposal
+              </span>
               <p className="text-xl font-bold text-purple-400">
                 {metrics?.leadCounts.proposal ?? 0}
               </p>
             </div>
             <div className="rounded-lg border border-border bg-background p-3 text-center">
-              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">Closed</span>
-              <p className="text-xl font-bold text-primary">
-                {metrics?.leadCounts.closed ?? 0}
-              </p>
+              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">
+                Closed
+              </span>
+              <p className="text-xl font-bold text-primary">{metrics?.leadCounts.closed ?? 0}</p>
             </div>
             <div className="rounded-lg border border-border bg-background p-3 text-center">
-              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">Archived</span>
-              <p className="text-xl font-bold text-muted-foreground">{metrics?.leadCounts.archived ?? 0}</p>
+              <span className="text-[0.7rem] text-muted-foreground uppercase font-mono">
+                Archived
+              </span>
+              <p className="text-xl font-bold text-muted-foreground">
+                {metrics?.leadCounts.archived ?? 0}
+              </p>
             </div>
           </div>
         </div>
@@ -181,7 +191,9 @@ function AdminDashboardPage() {
           Recent Lead Submissions
         </h2>
         {metrics?.recentLeads.length === 0 ? (
-          <p className="text-xs text-muted-foreground font-mono py-4">No lead submissions in database.</p>
+          <p className="text-xs text-muted-foreground font-mono py-4">
+            No lead submissions in database.
+          </p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">

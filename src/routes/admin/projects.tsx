@@ -56,7 +56,7 @@ function AdminProjectsPage() {
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
-    })
+    }),
   );
 
   const handleDragEnd = async (event: DragEndEvent) => {
@@ -66,39 +66,39 @@ function AdminProjectsPage() {
         const oldIndex = items.findIndex((i) => i.id === active.id);
         const newIndex = items.findIndex((i) => i.id === over.id);
         const newItems = arrayMove(items, oldIndex, newIndex);
-        
+
         const saveOrder = async () => {
-           try {
-             const promises = newItems.map((item, index) => {
-               // Only partial update to avoid overwriting with stale data, though our upsert expects full data 
-               // For safety, let's use the full item from newItems and update its display_order
-               return upsertAdminProject({ 
-                 data: { 
-                   id: item.id,
-                   title: item.title,
-                   slug: item.slug,
-                   gig_id: item.gig_id,
-                   category: item.category,
-                   client_name: item.client_name,
-                   description: item.description,
-                   outcomes: item.outcomes,
-                   tags: item.tags,
-                   thumbnail_url: item.thumbnail_url,
-                   gallery_urls: item.gallery_urls,
-                   is_featured: item.is_featured,
-                   is_published: item.is_published,
-                   display_order: index + 1 
-                 } 
-               });
-             });
-             await Promise.all(promises);
-           } catch(e: any) {
-             toast.error("Failed to update ordering: " + e.message);
-             load(); 
-           }
+          try {
+            const promises = newItems.map((item, index) => {
+              // Only partial update to avoid overwriting with stale data, though our upsert expects full data
+              // For safety, let's use the full item from newItems and update its display_order
+              return upsertAdminProject({
+                data: {
+                  id: item.id,
+                  title: item.title,
+                  slug: item.slug,
+                  gig_id: item.gig_id,
+                  category: item.category,
+                  client_name: item.client_name,
+                  description: item.description,
+                  outcomes: item.outcomes,
+                  tags: item.tags,
+                  thumbnail_url: item.thumbnail_url,
+                  gallery_urls: item.gallery_urls,
+                  is_featured: item.is_featured,
+                  is_published: item.is_published,
+                  display_order: index + 1,
+                },
+              });
+            });
+            await Promise.all(promises);
+          } catch (e: any) {
+            toast.error("Failed to update ordering: " + e.message);
+            load();
+          }
         };
         saveOrder();
-        
+
         return newItems;
       });
     }
@@ -208,7 +208,10 @@ function AdminProjectsPage() {
                   <th className="p-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <SortableContext items={projects.map((p) => p.id)} strategy={verticalListSortingStrategy}>
+              <SortableContext
+                items={projects.map((p) => p.id)}
+                strategy={verticalListSortingStrategy}
+              >
                 <tbody className="divide-y divide-zinc-800/60">
                   {projects.map((p) => (
                     <SortableRow key={p.id} id={p.id}>
@@ -221,7 +224,9 @@ function AdminProjectsPage() {
                       </td>
                       <td className="p-4 font-semibold text-foreground">
                         <div>{p.title}</div>
-                        <div className="text-[0.65rem] font-mono text-muted-foreground">/{p.slug}</div>
+                        <div className="text-[0.65rem] font-mono text-muted-foreground">
+                          /{p.slug}
+                        </div>
                       </td>
                       <td className="p-4 font-mono text-primary">{p.gig_id || "—"}</td>
                       <td className="p-4 text-muted-foreground">{p.category}</td>
@@ -276,7 +281,10 @@ function AdminProjectsPage() {
               <h2 className="text-lg font-bold text-foreground">
                 {editing.id ? "Edit Case Study" : "Create Case Study"}
               </h2>
-              <button onClick={() => setEditing(null)} className="text-muted-foreground hover:text-foreground">
+              <button
+                onClick={() => setEditing(null)}
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -284,7 +292,9 @@ function AdminProjectsPage() {
             <form onSubmit={handleSave} className="mt-6 space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono uppercase text-muted-foreground">Title</label>
+                  <label className="block text-xs font-mono uppercase text-muted-foreground">
+                    Title
+                  </label>
                   <input
                     type="text"
                     required
@@ -294,7 +304,9 @@ function AdminProjectsPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono uppercase text-muted-foreground">Slug</label>
+                  <label className="block text-xs font-mono uppercase text-muted-foreground">
+                    Slug
+                  </label>
                   <input
                     type="text"
                     required
@@ -392,7 +404,10 @@ function AdminProjectsPage() {
                     onChange={(e) =>
                       setEditing({
                         ...editing,
-                        tags: e.target.value.split(",").map((t) => t.trim()).filter(Boolean),
+                        tags: e.target.value
+                          .split(",")
+                          .map((t) => t.trim())
+                          .filter(Boolean),
                       })
                     }
                     className="mt-1 w-full rounded border border-border bg-surface p-2 text-sm text-foreground"
@@ -408,7 +423,10 @@ function AdminProjectsPage() {
                     onChange={(e) =>
                       setEditing({
                         ...editing,
-                        outcomes: e.target.value.split(",").map((t) => t.trim()).filter(Boolean),
+                        outcomes: e.target.value
+                          .split(",")
+                          .map((t) => t.trim())
+                          .filter(Boolean),
                       })
                     }
                     className="mt-1 w-full rounded border border-border bg-surface p-2 text-sm text-foreground"
@@ -426,7 +444,10 @@ function AdminProjectsPage() {
                   onChange={(e) =>
                     setEditing({
                       ...editing,
-                      gallery_urls: e.target.value.split(",").map((t) => t.trim()).filter(Boolean),
+                      gallery_urls: e.target.value
+                        .split(",")
+                        .map((t) => t.trim())
+                        .filter(Boolean),
                     })
                   }
                   className="mt-1 w-full rounded border border-border bg-surface p-2 text-sm text-foreground font-mono"

@@ -15,6 +15,7 @@ source: [internal]
 Server-Side Rendered React application deployed on Vercel with a Supabase PostgreSQL backend.
 
 **2. Details**
+
 - **Frontend**: Vite + Tanstack Start + React 19 + Tailwind
 - **Backend/API**: Tanstack Start server functions (Nitro)
 - **DB**: Supabase (PostgreSQL)
@@ -23,4 +24,5 @@ Server-Side Rendered React application deployed on Vercel with a Supabase Postgr
 Dictates deployment and development workflows.
 
 **4. Change Log**
+
 - Initialized memory layer.

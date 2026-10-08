@@ -27,7 +27,9 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (typeof localStorage !== "undefined" ? (localStorage.getItem(storageKey) as Theme) : null) || defaultTheme
+    () =>
+      (typeof localStorage !== "undefined" ? (localStorage.getItem(storageKey) as Theme) : null) ||
+      defaultTheme,
   );
 
   useEffect(() => {
@@ -57,8 +59,7 @@ export function ThemeProvider({
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
 
-  if (context === undefined)
-    throw new Error("useTheme must be used within a ThemeProvider");
+  if (context === undefined) throw new Error("useTheme must be used within a ThemeProvider");
 
   return context;
 };

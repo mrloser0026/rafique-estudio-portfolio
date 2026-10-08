@@ -54,7 +54,7 @@ function ProjectDetail() {
   const { data: project } = useSuspenseQuery(projectQuery(slug));
   const { data: globalSettings } = useSuspenseQuery(globalSettingsQuery);
   if (!project) return null;
-  const siteConfig = globalSettings?.['site_config'] || {};
+  const siteConfig = globalSettings?.["site_config"] || {};
 
   const role = project.role || "Lead Full-Stack Engineer · UI/UX Architect";
   const collaborationType = project.collaboration_type || "Collaborative Project";
@@ -147,7 +147,9 @@ function ProjectDetail() {
                 <h2 className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary font-semibold">
                   Engineering Contribution
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/80">{cleanHtml(contribution)}</p>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/80">
+                  {cleanHtml(contribution)}
+                </p>
               </section>
             ) : null}
 
@@ -239,7 +241,10 @@ function ProjectDetail() {
               </Link>
 
               <a
-                href={whatsappUrl(siteConfig.whatsapp || "", `Hi ${siteConfig.founder?.split(" ")[0] || "RAFIQUE"}, I read your case study on "${project.title}"...`)}
+                href={whatsappUrl(
+                  siteConfig.whatsapp || "",
+                  `Hi ${siteConfig.founder?.split(" ")[0] || "RAFIQUE"}, I read your case study on "${project.title}"...`,
+                )}
                 target="_blank"
                 rel="noreferrer"
                 className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-surface/50 px-6 font-mono text-xs font-semibold text-foreground transition-colors hover:border-primary/40 hover:text-primary active:scale-[0.97]"

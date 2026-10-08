@@ -1,6 +1,6 @@
 ---
-id: {NEURON_ID}
-title: {TITLE}
+id: { NEURON_ID }
+title: { TITLE }
 tags: []
 links: []
 importance: 5
@@ -13,11 +13,8 @@ source: [internal]
 
 **1. Core Statement**
 
-
 **2. Details**
 
-
 **3. Why it matters**
-
 
 **4. Change Log**

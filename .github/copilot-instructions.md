@@ -3,7 +3,7 @@ CRITICAL SYSTEM PROTOCOL: You must consult .ai_memory/context/README.md and read
 - Project identity: Rafique Estudio Portfolio
 - Mandatory memory consult before project work
 - Startup: read .ai_memory/context/README.md
-- Non-negotiables: 
+- Non-negotiables:
   - Do not expose Supabase keys.
   - Vercel env CLI must use stdin, not echo in powershell.
 - Canonical path: .ai_memory/context/ only

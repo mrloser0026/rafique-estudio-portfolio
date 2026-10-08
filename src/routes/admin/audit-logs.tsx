@@ -67,8 +67,12 @@ function AdminAuditLogsPage() {
             <tbody className="divide-y divide-zinc-800/60 font-mono">
               {logs.map((log) => (
                 <tr key={log.id} className="hover:bg-surface/40">
-                  <td className="p-4 text-muted-foreground">{new Date(log.created_at).toLocaleString()}</td>
-                  <td className="p-4 text-foreground font-semibold">{log.actor_email || "System"}</td>
+                  <td className="p-4 text-muted-foreground">
+                    {new Date(log.created_at).toLocaleString()}
+                  </td>
+                  <td className="p-4 text-foreground font-semibold">
+                    {log.actor_email || "System"}
+                  </td>
                   <td className="p-4 text-primary font-bold">{log.action}</td>
                   <td className="p-4 text-muted-foreground">{log.resource}</td>
                   <td className="p-4 text-muted-foreground">{log.resource_id || "—"}</td>

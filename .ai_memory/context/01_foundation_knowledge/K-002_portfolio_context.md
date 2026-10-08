@@ -15,6 +15,7 @@ source: [internal]
 Targeting B2B clients looking for full-stack engineering and Shopify optimization.
 
 **2. Details**
+
 - **Target audience**: E-commerce brands, SaaS startups.
 - **Reference data**: Built with Vite, Tanstack Start, React 19, Supabase.
 
@@ -22,4 +23,5 @@ Targeting B2B clients looking for full-stack engineering and Shopify optimizatio
 Sets the baseline for features and integrations.
 
 **4. Change Log**
+
 - Initialized memory layer.

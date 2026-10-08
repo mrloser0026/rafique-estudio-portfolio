@@ -15,6 +15,7 @@ source: [internal]
 Technical interaction pathways.
 
 **2. Details**
+
 - **Lead Capture**: form -> POST /api/submitLead -> Supabase.
 - **SSR Fetching**: Tanstack Server Functions -> Supabase -> Hydrated UI.
 
@@ -22,4 +23,5 @@ Technical interaction pathways.
 Guarantees correct implementation.
 
 **4. Change Log**
+
 - Initialized memory layer.

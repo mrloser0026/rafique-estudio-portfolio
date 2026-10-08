@@ -68,7 +68,8 @@ function AdminSettingsPage() {
     }
   };
 
-  if (loading) return <p className="text-xs font-mono text-muted-foreground py-8">Loading settings...</p>;
+  if (loading)
+    return <p className="text-xs font-mono text-muted-foreground py-8">Loading settings...</p>;
 
   return (
     <div className="space-y-6 max-w-4xl">
@@ -86,11 +87,13 @@ function AdminSettingsPage() {
 
       <div className="rounded-xl border border-border bg-surface/60 p-6">
         <h2 className="text-lg font-semibold text-foreground mb-6">Site Configuration</h2>
-        
+
         <form onSubmit={handleSave} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-mono uppercase text-muted-foreground">Site Name</label>
+              <label className="block text-xs font-mono uppercase text-muted-foreground">
+                Site Name
+              </label>
               <input
                 type="text"
                 value={siteConfig["name"] || ""}
@@ -99,7 +102,9 @@ function AdminSettingsPage() {
               />
             </div>
             <div>
-              <label className="block text-xs font-mono uppercase text-muted-foreground">Founder</label>
+              <label className="block text-xs font-mono uppercase text-muted-foreground">
+                Founder
+              </label>
               <input
                 type="text"
                 value={siteConfig["founder"] || ""}
@@ -111,7 +116,9 @@ function AdminSettingsPage() {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-mono uppercase text-muted-foreground">Role</label>
+              <label className="block text-xs font-mono uppercase text-muted-foreground">
+                Role
+              </label>
               <input
                 type="text"
                 value={siteConfig["role"] || ""}
@@ -120,7 +127,9 @@ function AdminSettingsPage() {
               />
             </div>
             <div>
-              <label className="block text-xs font-mono uppercase text-muted-foreground">Handle (Social)</label>
+              <label className="block text-xs font-mono uppercase text-muted-foreground">
+                Handle (Social)
+              </label>
               <input
                 type="text"
                 value={siteConfig["handle"] || ""}
@@ -132,7 +141,9 @@ function AdminSettingsPage() {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-mono uppercase text-muted-foreground">Email Address</label>
+              <label className="block text-xs font-mono uppercase text-muted-foreground">
+                Email Address
+              </label>
               <input
                 type="email"
                 value={siteConfig["email"] || ""}
@@ -141,7 +152,9 @@ function AdminSettingsPage() {
               />
             </div>
             <div>
-              <label className="block text-xs font-mono uppercase text-muted-foreground">WhatsApp Number</label>
+              <label className="block text-xs font-mono uppercase text-muted-foreground">
+                WhatsApp Number
+              </label>
               <input
                 type="text"
                 value={siteConfig["whatsapp"] || ""}
@@ -153,7 +166,9 @@ function AdminSettingsPage() {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-mono uppercase text-muted-foreground">Location</label>
+              <label className="block text-xs font-mono uppercase text-muted-foreground">
+                Location
+              </label>
               <input
                 type="text"
                 value={siteConfig["location"] || ""}
@@ -162,7 +177,9 @@ function AdminSettingsPage() {
               />
             </div>
             <div>
-              <label className="block text-xs font-mono uppercase text-muted-foreground">Rating</label>
+              <label className="block text-xs font-mono uppercase text-muted-foreground">
+                Rating
+              </label>
               <input
                 type="text"
                 value={siteConfig["rating"] || ""}
@@ -174,7 +191,9 @@ function AdminSettingsPage() {
 
           <div className="grid grid-cols-1 gap-4">
             <div>
-              <label className="block text-xs font-mono uppercase text-muted-foreground">Fiverr Profile URL</label>
+              <label className="block text-xs font-mono uppercase text-muted-foreground">
+                Fiverr Profile URL
+              </label>
               <input
                 type="url"
                 value={siteConfig["fiverr_url"] || ""}

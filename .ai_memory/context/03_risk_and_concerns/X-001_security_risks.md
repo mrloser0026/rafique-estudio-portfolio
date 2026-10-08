@@ -15,7 +15,8 @@ source: [internal]
 Protecting Supabase credentials and preventing lead spam.
 
 **2. Details**
-- **Threat vectors**: 
+
+- **Threat vectors**:
   1. API key exposure.
   2. Bot spam on contact forms.
 
@@ -23,4 +24,5 @@ Protecting Supabase credentials and preventing lead spam.
 Data integrity and maintaining free tier limits on Supabase.
 
 **4. Change Log**
+
 - Initialized memory layer.

@@ -1,22 +1,22 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const root = path.join(__dirname, '.ai_memory');
-const context = path.join(root, 'context');
+const root = path.join(__dirname, ".ai_memory");
+const context = path.join(root, "context");
 
 const dirs = [
-  path.join(context, '_templates'),
-  path.join(context, '01_foundation_knowledge'),
-  path.join(context, '02_research_insights'),
-  path.join(context, '03_risk_and_concerns'),
-  path.join(context, '04_architecture_and_technical'),
-  path.join(context, '05_decisions_ledger'),
-  path.join(context, '06_learnings_observations'),
-  path.join(context, '07_product_requirements_prd')
+  path.join(context, "_templates"),
+  path.join(context, "01_foundation_knowledge"),
+  path.join(context, "02_research_insights"),
+  path.join(context, "03_risk_and_concerns"),
+  path.join(context, "04_architecture_and_technical"),
+  path.join(context, "05_decisions_ledger"),
+  path.join(context, "06_learnings_observations"),
+  path.join(context, "07_product_requirements_prd"),
 ];
 
 // 1. Create directories
-dirs.forEach(d => {
+dirs.forEach((d) => {
   fs.mkdirSync(d, { recursive: true });
 });
 
@@ -29,7 +29,7 @@ links: []
 importance: 5
 status: draft
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -45,7 +45,7 @@ source: [internal]
 
 **4. Change Log**
 `;
-fs.writeFileSync(path.join(context, '_templates', 'neuron.md'), neuronTemplate);
+fs.writeFileSync(path.join(context, "_templates", "neuron.md"), neuronTemplate);
 
 // 3. Foundation Knowledge
 const k001 = `---
@@ -56,7 +56,7 @@ links: [T-001, T-002]
 importance: 10
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -76,7 +76,7 @@ It represents the founder's brand and is the primary lead generation tool.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '01_foundation_knowledge', 'K-001_core_identity.md'), k001);
+fs.writeFileSync(path.join(context, "01_foundation_knowledge", "K-001_core_identity.md"), k001);
 
 const k002 = `---
 id: K-002
@@ -86,7 +86,7 @@ links: []
 importance: 8
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -104,7 +104,7 @@ Sets the baseline for features and integrations.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '01_foundation_knowledge', 'K-002_portfolio_context.md'), k002);
+fs.writeFileSync(path.join(context, "01_foundation_knowledge", "K-002_portfolio_context.md"), k002);
 
 // 4. Research Insights
 const r001 = `---
@@ -115,7 +115,7 @@ links: [K-002]
 importance: 7
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -133,7 +133,7 @@ Guides UX/UI decisions on the portfolio.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '02_research_insights', 'R-001_client_psychology.md'), r001);
+fs.writeFileSync(path.join(context, "02_research_insights", "R-001_client_psychology.md"), r001);
 
 const r002 = `---
 id: R-002
@@ -143,7 +143,7 @@ links: [K-001]
 importance: 6
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -160,7 +160,10 @@ Informs future features.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '02_research_insights', 'R-002_competitive_landscape.md'), r002);
+fs.writeFileSync(
+  path.join(context, "02_research_insights", "R-002_competitive_landscape.md"),
+  r002,
+);
 
 // 5. Risks
 const x001 = `---
@@ -171,7 +174,7 @@ links: []
 importance: 9
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -190,7 +193,7 @@ Data integrity and maintaining free tier limits on Supabase.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '03_risk_and_concerns', 'X-001_security_risks.md'), x001);
+fs.writeFileSync(path.join(context, "03_risk_and_concerns", "X-001_security_risks.md"), x001);
 
 const x002 = `---
 id: X-002
@@ -200,7 +203,7 @@ links: []
 importance: 7
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -217,7 +220,7 @@ Legal safety.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '03_risk_and_concerns', 'X-002_compliance_risks.md'), x002);
+fs.writeFileSync(path.join(context, "03_risk_and_concerns", "X-002_compliance_risks.md"), x002);
 
 // 6. Architecture & Tech
 const t001 = `---
@@ -228,7 +231,7 @@ links: []
 importance: 10
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -247,7 +250,10 @@ Dictates deployment and development workflows.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '04_architecture_and_technical', 'T-001_system_architecture.md'), t001);
+fs.writeFileSync(
+  path.join(context, "04_architecture_and_technical", "T-001_system_architecture.md"),
+  t001,
+);
 
 const t002 = `---
 id: T-002
@@ -257,7 +263,7 @@ links: [T-001]
 importance: 8
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -275,7 +281,10 @@ Scope containment.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '04_architecture_and_technical', 'T-002_core_features_matrix.md'), t002);
+fs.writeFileSync(
+  path.join(context, "04_architecture_and_technical", "T-002_core_features_matrix.md"),
+  t002,
+);
 
 const t003 = `---
 id: T-003
@@ -285,7 +294,7 @@ links: [X-001]
 importance: 9
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -303,7 +312,10 @@ Ensures fast recovery from breaking changes.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '04_architecture_and_technical', 'T-003_critical_protocol.md'), t003);
+fs.writeFileSync(
+  path.join(context, "04_architecture_and_technical", "T-003_critical_protocol.md"),
+  t003,
+);
 
 // 7. Decisions Ledger
 const d001 = `---
@@ -314,7 +326,7 @@ links: []
 importance: 10
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -340,7 +352,7 @@ Prevents revisiting closed arguments.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '05_decisions_ledger', 'D-001_active_decisions.md'), d001);
+fs.writeFileSync(path.join(context, "05_decisions_ledger", "D-001_active_decisions.md"), d001);
 
 const d002 = `---
 id: D-002
@@ -350,7 +362,7 @@ links: [D-001]
 importance: 6
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -368,7 +380,7 @@ Context for why non-obvious paths were taken.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '05_decisions_ledger', 'D-002_tradeoffs_archive.md'), d002);
+fs.writeFileSync(path.join(context, "05_decisions_ledger", "D-002_tradeoffs_archive.md"), d002);
 
 // 8. Learnings
 const l001 = `---
@@ -379,7 +391,7 @@ links: []
 importance: 5
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -397,7 +409,10 @@ Continuous improvement.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '06_learnings_observations', 'L-001_telemetry_and_feedback.md'), l001);
+fs.writeFileSync(
+  path.join(context, "06_learnings_observations", "L-001_telemetry_and_feedback.md"),
+  l001,
+);
 
 const l002 = `---
 id: L-002
@@ -407,7 +422,7 @@ links: []
 importance: 10
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -425,7 +440,10 @@ Avoids repeating frustrating debugging sessions.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '06_learnings_observations', 'L-002_mistakes_and_regressions.md'), l002);
+fs.writeFileSync(
+  path.join(context, "06_learnings_observations", "L-002_mistakes_and_regressions.md"),
+  l002,
+);
 
 // 9. PRD Layer
 const p001 = `---
@@ -436,7 +454,7 @@ links: []
 importance: 9
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -458,7 +476,10 @@ Defines boundaries.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '07_product_requirements_prd', 'P-001_product_requirements_document.md'), p001);
+fs.writeFileSync(
+  path.join(context, "07_product_requirements_prd", "P-001_product_requirements_document.md"),
+  p001,
+);
 
 const p002 = `---
 id: P-002
@@ -468,7 +489,7 @@ links: [P-001]
 importance: 8
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -486,7 +507,10 @@ Guarantees correct implementation.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '07_product_requirements_prd', 'P-002_functional_specifications.md'), p002);
+fs.writeFileSync(
+  path.join(context, "07_product_requirements_prd", "P-002_functional_specifications.md"),
+  p002,
+);
 
 const p003 = `---
 id: P-003
@@ -496,7 +520,7 @@ links: []
 importance: 6
 status: confirmed
 version: 1.0.0
-updated: ${new Date().toISOString().split('T')[0]}
+updated: ${new Date().toISOString().split("T")[0]}
 supersedes: []
 source: [internal]
 ---
@@ -515,7 +539,10 @@ Progress tracking.
 **4. Change Log**
 - Initialized memory layer.
 `;
-fs.writeFileSync(path.join(context, '07_product_requirements_prd', 'P-003_milestone_roadmap.md'), p003);
+fs.writeFileSync(
+  path.join(context, "07_product_requirements_prd", "P-003_milestone_roadmap.md"),
+  p003,
+);
 
 // 10. Memory Index README
 const readme = `# Neural Memory Layer for Rafique Estudio
@@ -568,7 +595,7 @@ L-002 -.->|links| T-003
 2. Consult K-001, D-001
 3. Retrieve task-relevant neurons by tag.
 `;
-fs.writeFileSync(path.join(context, 'README.md'), readme);
+fs.writeFileSync(path.join(context, "README.md"), readme);
 
 // 11. Cross-IDE Bridges
 const rootDir = __dirname;
@@ -583,9 +610,9 @@ const cursorrules = `CRITICAL SYSTEM PROTOCOL: You must consult .ai_memory/conte
   - Vercel env CLI must use stdin, not echo in powershell.
 - Canonical path: .ai_memory/context/ only
 `;
-fs.writeFileSync(path.join(rootDir, '.cursorrules'), cursorrules);
+fs.writeFileSync(path.join(rootDir, ".cursorrules"), cursorrules);
 
-fs.mkdirSync(path.join(rootDir, '.cursor', 'rules'), { recursive: true });
+fs.mkdirSync(path.join(rootDir, ".cursor", "rules"), { recursive: true });
 const cursorMdc = `---
 description: Rafique Estudio Neural Memory Layer — always-on context and update protocol
 alwaysApply: true
@@ -596,12 +623,12 @@ alwaysApply: true
 - After you work: update checklist
 - Canonical path: .ai_memory/context/ only
 `;
-fs.writeFileSync(path.join(rootDir, '.cursor', 'rules', 'rafique-estudio-memory.mdc'), cursorMdc);
+fs.writeFileSync(path.join(rootDir, ".cursor", "rules", "rafique-estudio-memory.mdc"), cursorMdc);
 
-fs.writeFileSync(path.join(rootDir, '.clauderules'), cursorrules);
-fs.writeFileSync(path.join(rootDir, '.windsufrules'), cursorrules);
+fs.writeFileSync(path.join(rootDir, ".clauderules"), cursorrules);
+fs.writeFileSync(path.join(rootDir, ".windsufrules"), cursorrules);
 
-fs.mkdirSync(path.join(rootDir, '.github'), { recursive: true });
-fs.writeFileSync(path.join(rootDir, '.github', 'copilot-instructions.md'), cursorrules);
+fs.mkdirSync(path.join(rootDir, ".github"), { recursive: true });
+fs.writeFileSync(path.join(rootDir, ".github", "copilot-instructions.md"), cursorrules);
 
-console.log('Successfully orchestrated AI Neural Memory Layer ecosystem.');
+console.log("Successfully orchestrated AI Neural Memory Layer ecosystem.");

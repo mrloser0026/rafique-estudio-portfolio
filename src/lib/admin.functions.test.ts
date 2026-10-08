@@ -15,7 +15,7 @@ vi.mock("@supabase/supabase-js", () => ({
 process.env["SUPABASE_URL"] = "https://mock.supabase.co";
 process.env["SUPABASE_PUBLISHABLE_KEY"] = "mock_key";
 
-import { adminClient } from "./admin.functions";
+import { adminClient } from "./adminClient.server";
 
 describe("adminClient", () => {
   beforeEach(() => {
@@ -41,7 +41,7 @@ describe("adminClient", () => {
             Authorization: "Bearer mock_token_from_header",
           },
         },
-      })
+      }),
     );
   });
 
@@ -64,7 +64,7 @@ describe("adminClient", () => {
             Authorization: "Bearer explicit_mock_token",
           },
         },
-      })
+      }),
     );
   });
 });

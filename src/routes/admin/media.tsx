@@ -152,14 +152,19 @@ function AdminMediaPage() {
           <div className="w-full max-w-lg rounded-xl border border-border bg-background p-6 text-foreground shadow-2xl">
             <div className="flex items-center justify-between border-b border-border pb-4">
               <h2 className="text-lg font-bold text-foreground">Register Media Asset</h2>
-              <button onClick={() => setEditing(null)} className="text-muted-foreground hover:text-foreground">
+              <button
+                onClick={() => setEditing(null)}
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
             <form onSubmit={handleSave} className="mt-6 space-y-4">
               <div>
-                <label className="block text-xs font-mono uppercase text-muted-foreground">Filename</label>
+                <label className="block text-xs font-mono uppercase text-muted-foreground">
+                  Filename
+                </label>
                 <input
                   type="text"
                   required
@@ -183,7 +188,9 @@ function AdminMediaPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase text-muted-foreground">Alt Text</label>
+                <label className="block text-xs font-mono uppercase text-muted-foreground">
+                  Alt Text
+                </label>
                 <input
                   type="text"
                   value={editing.alt_text || ""}

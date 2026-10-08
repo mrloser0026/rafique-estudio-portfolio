@@ -53,16 +53,18 @@ export function formatPrice(amount: number | null | undefined): string {
  */
 export function cleanHtml(raw: string | null | undefined): string {
   if (!raw) return "";
-  return raw
-    // Decode common HTML entities
-    .replace(/&amp;/gi, "&")
-    .replace(/&lt;/gi, "<")
-    .replace(/&gt;/gi, ">")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/gi, "'")
-    .replace(/&nbsp;/gi, " ")
-    .replace(/\u00a0/g, " ")
-    // Collapse run-on whitespace from HTML-to-text extraction
-    .replace(/[ \t]{3,}/g, " ")
-    .trim();
+  return (
+    raw
+      // Decode common HTML entities
+      .replace(/&amp;/gi, "&")
+      .replace(/&lt;/gi, "<")
+      .replace(/&gt;/gi, ">")
+      .replace(/&quot;/gi, '"')
+      .replace(/&#39;/gi, "'")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/\u00a0/g, " ")
+      // Collapse run-on whitespace from HTML-to-text extraction
+      .replace(/[ \t]{3,}/g, " ")
+      .trim()
+  );
 }

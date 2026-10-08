@@ -154,13 +154,13 @@ function RootShell({ children }: { children: ReactNode }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "M. Jahanzaib Rafique",
-              "jobTitle": "Founder & Full-Stack Engineer",
-              "worksFor": {
+              name: "M. Jahanzaib Rafique",
+              jobTitle: "Founder & Full-Stack Engineer",
+              worksFor: {
                 "@type": "Organization",
-                "name": "Rafique Estudio"
+                name: "Rafique Estudio",
               },
-              "url": "https://rafique-estudio-portfolio.vercel.app"
+              url: "https://rafique-estudio-portfolio.vercel.app",
             }),
           }}
         />

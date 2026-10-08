@@ -15,6 +15,7 @@ source: [internal]
 Matrix of primary portfolio capabilities.
 
 **2. Details**
+
 - Primary mode: Public visitor viewing projects (Day 1).
 - Advanced mode: Admin CMS to update projects and sections (Day 1).
 
@@ -22,4 +23,5 @@ Matrix of primary portfolio capabilities.
 Scope containment.
 
 **4. Change Log**
+
 - Initialized memory layer.

@@ -22,11 +22,13 @@ export function FiverrCTA({ className, variant = "subtle" }: FiverrCTAProps) {
         variant === "subtle"
           ? "bg-[#1dbf73]/10 text-[#1dbf73] hover:bg-[#1dbf73]/20 hover:shadow-sm"
           : "bg-[#1dbf73] text-white hover:bg-[#19a463] hover:shadow-md",
-        className
+        className,
       )}
       aria-label="Hire me on Fiverr"
     >
-      <span className="font-semibold tracking-tight uppercase tracking-wider text-[11px] sm:text-xs">View Fiverr Profile</span>
+      <span className="font-semibold tracking-tight uppercase tracking-wider text-[11px] sm:text-xs">
+        View Fiverr Profile
+      </span>
       <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 opacity-80" />
     </a>
   );

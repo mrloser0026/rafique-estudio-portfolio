@@ -15,6 +15,7 @@ source: [internal]
 Project timeline.
 
 **2. Details**
+
 - **Alpha**: Base UI (Done).
 - **Beta**: CMS Integration (Done).
 - **V1**: Live deployment on Vercel with correct branding (Done).
@@ -23,4 +24,5 @@ Project timeline.
 Progress tracking.
 
 **4. Change Log**
+
 - Initialized memory layer.

@@ -15,6 +15,7 @@ source: [internal]
 Tracking KPIs and feedback.
 
 **2. Details**
+
 - **North-star**: Lead conversions.
 - **Feedback log**: To be updated post-launch.
 
@@ -22,4 +23,5 @@ Tracking KPIs and feedback.
 Continuous improvement.
 
 **4. Change Log**
+
 - Initialized memory layer.

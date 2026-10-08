@@ -15,6 +15,7 @@ source: [internal]
 Log of regressions and errors to prevent recurrence.
 
 **2. Details**
+
 - **Error**: Vercel env CLI adds literal quotes in powershell.
 - **Resolution**: Use node child_process with stdin instead of echo.
 
@@ -22,4 +23,5 @@ Log of regressions and errors to prevent recurrence.
 Avoids repeating frustrating debugging sessions.
 
 **4. Change Log**
+
 - Initialized memory layer.

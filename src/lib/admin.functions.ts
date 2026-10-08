@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { getRequest } from "@tanstack/react-start/server";
+import { adminClient } from "./adminClient.server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 
@@ -18,50 +18,9 @@ import type {
   StaffMember,
 } from "@/lib/content-types";
 
-function cleanEnv(val: string | undefined): string {
-  if (!val) return "";
-  return val
-    .replace(/^\uFEFF/, "")
-    .replace(/[\r\n\t]/g, "")
-    .trim();
-}
-
-export function adminClient(authToken?: string) {
-  const url = cleanEnv(process.env["SUPABASE_URL"] || process.env["VITE_SUPABASE_URL"]);
-  const anonKey = cleanEnv(
-    process.env["SUPABASE_ANON_KEY"] ||
-      process.env["SUPABASE_PUBLISHABLE_KEY"] ||
-      process.env["VITE_SUPABASE_PUBLISHABLE_KEY"],
-  );
-  if (!url || !anonKey) throw new Error("Supabase credentials not configured");
-
-  let finalToken = authToken;
-  if (!finalToken) {
-    try {
-      const req = getRequest();
-      if (req) {
-        const authHeader = req.headers.get("authorization");
-        if (authHeader && authHeader.startsWith("Bearer ")) {
-          finalToken = authHeader.replace("Bearer ", "");
-        }
-      }
-    } catch (e) {}
-  }
-
-  const headers: Record<string, string> = {};
-  if (finalToken) {
-    headers["Authorization"] = `Bearer ${cleanEnv(finalToken)}`;
-  }
-
-  return createClient<Database>(url, anonKey, {
-    global: { headers },
-    auth: { persistSession: false, autoRefreshToken: false, storage: undefined },
-  });
-}
-
 // ---------------- DASHBOARD ----------------
 export const getAdminDashboardMetrics = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }) => {
     const supabase = adminClient(data.token);
 
@@ -113,7 +72,7 @@ export const getAdminDashboardMetrics = createServerFn({ method: "GET" })
 
 // ---------------- SERVICES ----------------
 export const getAdminServices = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<Service[]> => {
     const supabase = adminClient(data.token);
     const { data: rows, error } = await supabase
@@ -145,7 +104,7 @@ export const serviceMutationSchema = z.object({
 });
 
 export const upsertAdminService = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => serviceMutationSchema.parse(data))
+  .validator((data: unknown) => serviceMutationSchema.parse(data))
   .handler(async ({ data }): Promise<Service> => {
     const supabase = adminClient(data.token);
     const payload = {
@@ -189,7 +148,7 @@ export const upsertAdminService = createServerFn({ method: "POST" })
   });
 
 export const deleteAdminService = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z.object({ token: z.string().optional(), id: z.string() }).parse(data),
   )
   .handler(async ({ data }) => {
@@ -201,7 +160,7 @@ export const deleteAdminService = createServerFn({ method: "POST" })
 
 // ---------------- PROJECTS ----------------
 export const getAdminProjects = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<Project[]> => {
     const supabase = adminClient(data.token);
     const { data: rows, error } = await supabase
@@ -231,7 +190,7 @@ export const projectMutationSchema = z.object({
 });
 
 export const upsertAdminProject = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => projectMutationSchema.parse(data))
+  .validator((data: unknown) => projectMutationSchema.parse(data))
   .handler(async ({ data }): Promise<Project> => {
     const supabase = adminClient(data.token);
     const payload = {
@@ -273,7 +232,7 @@ export const upsertAdminProject = createServerFn({ method: "POST" })
   });
 
 export const deleteAdminProject = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z.object({ token: z.string().optional(), id: z.string() }).parse(data),
   )
   .handler(async ({ data }) => {
@@ -285,7 +244,9 @@ export const deleteAdminProject = createServerFn({ method: "POST" })
 
 // ---------------- THEME EDITOR / PAGE SECTIONS ----------------
 export const getAdminPageSections = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional(), pageId: z.string() }).parse(data))
+  .validator((data: unknown) =>
+    z.object({ token: z.string().optional(), pageId: z.string() }).parse(data),
+  )
   .handler(async ({ data }): Promise<PageSection[]> => {
     const supabase = adminClient(data.token);
     const { data: sections, error } = await supabase
@@ -298,7 +259,7 @@ export const getAdminPageSections = createServerFn({ method: "GET" })
   });
 
 export const updateAdminPageSections = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z
       .object({
         token: z.string().optional(),
@@ -308,7 +269,7 @@ export const updateAdminPageSections = createServerFn({ method: "POST" })
             id: z.string(),
             display_order: z.number(),
             is_visible: z.boolean(),
-          })
+          }),
         ),
       })
       .parse(data),
@@ -320,14 +281,14 @@ export const updateAdminPageSections = createServerFn({ method: "POST" })
         .from("page_sections")
         .update({ display_order: section.display_order, is_visible: section.is_visible })
         .eq("id", section.id)
-        .eq("page_id", data.pageId)
+        .eq("page_id", data.pageId),
     );
     await Promise.all(promises);
     return { ok: true };
   });
 
 export const getAdminThemeSections = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<PageSection[]> => {
     const supabase = adminClient(data.token);
     const { data: page } = await supabase
@@ -347,7 +308,7 @@ export const getAdminThemeSections = createServerFn({ method: "GET" })
   });
 
 export const updateAdminSection = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z
       .object({
         token: z.string().optional(),
@@ -382,7 +343,7 @@ export const updateAdminSection = createServerFn({ method: "POST" })
   });
 
 export const reorderAdminSections = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z
       .object({
         token: z.string().optional(),
@@ -401,7 +362,7 @@ export const reorderAdminSections = createServerFn({ method: "POST" })
 
 // ---------------- PAGES ----------------
 export const getAdminPages = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<SitePage[]> => {
     const supabase = adminClient(data.token);
     const { data: rows, error } = await supabase
@@ -413,7 +374,7 @@ export const getAdminPages = createServerFn({ method: "GET" })
   });
 
 export const upsertAdminPage = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z
       .object({
         token: z.string().optional(),
@@ -464,7 +425,7 @@ export const upsertAdminPage = createServerFn({ method: "POST" })
 
 // ---------------- GLOBAL SETTINGS ----------------
 export const getAdminGlobalSettings = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }) => {
     const supabase = adminClient(data.token);
     const { data: rows, error } = await (supabase.from as any)("global_settings").select("*");
@@ -477,21 +438,22 @@ export const getAdminGlobalSettings = createServerFn({ method: "GET" })
   });
 
 export const updateAdminGlobalSetting = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z.object({ token: z.string().optional(), key: z.string(), value: z.any() }).parse(data),
   )
   .handler(async ({ data }) => {
     const supabase = adminClient(data.token);
-    const { error } = await (supabase.from as any)("global_settings")
-      .upsert({ key: data.key, value: data.value, updated_at: new Date().toISOString() }, { onConflict: "key" });
+    const { error } = await (supabase.from as any)("global_settings").upsert(
+      { key: data.key, value: data.value, updated_at: new Date().toISOString() },
+      { onConflict: "key" },
+    );
     if (error) throw new Error(error.message);
     return { ok: true };
   });
 
-
 // ---------------- LEADS CRM ----------------
 export const getAdminLeads = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<Lead[]> => {
     const supabase = adminClient(data.token);
     const { data: rows, error } = await supabase
@@ -503,7 +465,7 @@ export const getAdminLeads = createServerFn({ method: "GET" })
   });
 
 export const updateAdminLeadStatus = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z
       .object({
         token: z.string().optional(),
@@ -530,7 +492,7 @@ export const updateAdminLeadStatus = createServerFn({ method: "POST" })
 
 // ---------------- ORDERS / QUOTES ----------------
 export const getAdminOrders = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<Order[]> => {
     const supabase = adminClient(data.token);
     const { data: rows, error } = await supabase
@@ -542,7 +504,7 @@ export const getAdminOrders = createServerFn({ method: "GET" })
   });
 
 export const upsertAdminOrder = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z
       .object({
         token: z.string().optional(),
@@ -593,7 +555,7 @@ export const upsertAdminOrder = createServerFn({ method: "POST" })
 
 // ---------------- MEDIA LIBRARY ----------------
 export const getAdminMediaAssets = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<MediaAsset[]> => {
     const supabase = adminClient(data.token);
     const { data: rows, error } = await supabase
@@ -605,7 +567,7 @@ export const getAdminMediaAssets = createServerFn({ method: "GET" })
   });
 
 export const upsertAdminMediaAsset = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z
       .object({
         token: z.string().optional(),
@@ -652,7 +614,7 @@ export const upsertAdminMediaAsset = createServerFn({ method: "POST" })
 
 // ---------------- SEO SETTINGS ----------------
 export const getAdminSeoSettings = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<SeoSetting[]> => {
     const supabase = adminClient(data.token);
     const { data: rows, error } = await supabase
@@ -664,7 +626,7 @@ export const getAdminSeoSettings = createServerFn({ method: "GET" })
   });
 
 export const upsertAdminSeoSetting = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) =>
+  .validator((data: unknown) =>
     z
       .object({
         token: z.string().optional(),
@@ -713,7 +675,7 @@ export const upsertAdminSeoSetting = createServerFn({ method: "POST" })
 
 // ---------------- STAFF & RBAC ----------------
 export const getAdminStaffMembers = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<StaffMember[]> => {
     const supabase = adminClient(data.token);
     const [profilesRes, rolesRes] = await Promise.all([
@@ -743,7 +705,7 @@ export const getAdminStaffMembers = createServerFn({ method: "GET" })
 
 // ---------------- AUDIT LOGS ----------------
 export const getAdminAuditLogs = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
+  .validator((data: unknown) => z.object({ token: z.string().optional() }).parse(data))
   .handler(async ({ data }): Promise<AuditLogEntry[]> => {
     const supabase = adminClient(data.token);
     const { data: rows, error } = await supabase

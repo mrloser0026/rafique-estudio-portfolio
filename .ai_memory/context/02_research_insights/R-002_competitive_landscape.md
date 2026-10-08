@@ -15,10 +15,12 @@ source: [internal]
 Stands out against generic agency templates via custom SSR and modern animations.
 
 **2. Details**
+
 - **Whitespace analysis**: Many portfolios lack backend integration; this has a full CMS.
 
 **3. Why it matters**
 Informs future features.
 
 **4. Change Log**
+
 - Initialized memory layer.

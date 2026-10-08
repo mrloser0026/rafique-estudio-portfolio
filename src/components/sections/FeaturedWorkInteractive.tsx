@@ -27,19 +27,22 @@ export function FeaturedWorkInteractive({ projects }: { projects: Project[] }) {
   const [isPointerSelection, setIsPointerSelection] = useState(false);
   const tabId = useId();
   const panelId = useId();
-  
+
   // Refs for scrolling the active item into view
   const navRailRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const activeProject = projects[activeProjectIndex];
 
-  const handleProjectSelect = useCallback((idx: number) => {
-    if (idx !== activeProjectIndex) {
-      setIsPointerSelection(true);
-      setActiveProjectIndex(idx);
-    }
-  }, [activeProjectIndex]);
+  const handleProjectSelect = useCallback(
+    (idx: number) => {
+      if (idx !== activeProjectIndex) {
+        setIsPointerSelection(true);
+        setActiveProjectIndex(idx);
+      }
+    },
+    [activeProjectIndex],
+  );
 
   // Preload all project images
   useEffect(() => {
@@ -95,7 +98,6 @@ export function FeaturedWorkInteractive({ projects }: { projects: Project[] }) {
 
   return (
     <div className="fw-wrapper">
-      
       {/* ─── Left: Featured Project (Media + Info) ──────────────────── */}
       <div
         className="fw-main"
@@ -137,14 +139,16 @@ export function FeaturedWorkInteractive({ projects }: { projects: Project[] }) {
                 <span className="fw-sep" />
                 <span className="fw-cat">{displayCategory(activeProject.category)}</span>
               </div>
-              
+
               <h3 className="fw-title">{activeProject.title}</h3>
-              
+
               <p className="fw-desc">
                 {cleanHtml(activeProject.short_description || activeProject.description)}
               </p>
-              
-              {techStack.length > 0 && <p className="fw-tech">{techStack.map((t) => cleanHtml(t)).join(" · ")}</p>}
+
+              {techStack.length > 0 && (
+                <p className="fw-tech">{techStack.map((t) => cleanHtml(t)).join(" · ")}</p>
+              )}
 
               <Link
                 to="/work/$slug"
@@ -168,8 +172,8 @@ export function FeaturedWorkInteractive({ projects }: { projects: Project[] }) {
         aria-orientation="vertical"
         onKeyDown={handleNavKeyDown}
       >
-        <button 
-          className="fw-nav-arrow fw-nav-arrow-up" 
+        <button
+          className="fw-nav-arrow fw-nav-arrow-up"
           onClick={() => handleProjectSelect(Math.max(activeProjectIndex - 1, 0))}
           disabled={activeProjectIndex === 0}
           aria-label="Previous project"
@@ -183,7 +187,9 @@ export function FeaturedWorkInteractive({ projects }: { projects: Project[] }) {
             return (
               <button
                 key={project.id}
-                ref={(el) => { itemRefs.current[idx] = el; }}
+                ref={(el) => {
+                  itemRefs.current[idx] = el;
+                }}
                 id={`${tabId}-${idx}`}
                 role="tab"
                 type="button"
@@ -197,11 +203,11 @@ export function FeaturedWorkInteractive({ projects }: { projects: Project[] }) {
                 )}
               >
                 <div className="fw-nav-thumb-wrapper">
-                  <img 
-                    src={project.thumbnail_url || project.featured_image} 
-                    alt={`Thumbnail for ${project.title}`} 
-                    className="fw-nav-thumb-img" 
-                    loading="lazy" 
+                  <img
+                    src={project.thumbnail_url || project.featured_image}
+                    alt={`Thumbnail for ${project.title}`}
+                    className="fw-nav-thumb-img"
+                    loading="lazy"
                   />
                 </div>
                 <div className="fw-nav-item-info">
@@ -216,8 +222,8 @@ export function FeaturedWorkInteractive({ projects }: { projects: Project[] }) {
           })}
         </div>
 
-        <button 
-          className="fw-nav-arrow fw-nav-arrow-down" 
+        <button
+          className="fw-nav-arrow fw-nav-arrow-down"
           onClick={() => handleProjectSelect(Math.min(activeProjectIndex + 1, projects.length - 1))}
           disabled={activeProjectIndex === projects.length - 1}
           aria-label="Next project"

@@ -15,11 +15,13 @@ source: [internal]
 Record of rejected alternatives.
 
 **2. Details**
-- **Rejected**: Direct DB update for Awan -> Rafique. 
+
+- **Rejected**: Direct DB update for Awan -> Rafique.
 - **Rationale**: Lack of Service Role Key made RLS block the update. SSR intercept chosen instead.
 
 **3. Why it matters**
 Context for why non-obvious paths were taken.
 
 **4. Change Log**
+
 - Initialized memory layer.

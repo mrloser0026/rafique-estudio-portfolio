@@ -94,7 +94,9 @@ function AdminOrdersPage() {
       </div>
 
       {loading ? (
-        <p className="text-xs font-mono text-muted-foreground py-8">Loading operational orders...</p>
+        <p className="text-xs font-mono text-muted-foreground py-8">
+          Loading operational orders...
+        </p>
       ) : (
         <div className="rounded-xl border border-border bg-surface/60 overflow-hidden">
           <table className="w-full text-left text-xs">
@@ -155,7 +157,10 @@ function AdminOrdersPage() {
               <h2 className="text-lg font-bold text-foreground">
                 {editing.id ? "Edit Quote/Order" : "Create Quote/Order"}
               </h2>
-              <button onClick={() => setEditing(null)} className="text-muted-foreground hover:text-foreground">
+              <button
+                onClick={() => setEditing(null)}
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <X className="h-5 w-5" />
               </button>
             </div>

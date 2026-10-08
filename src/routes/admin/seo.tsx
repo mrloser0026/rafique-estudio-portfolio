@@ -76,8 +76,7 @@ function AdminSeoPage() {
           onClick={() =>
             setEditing({
               route: "/",
-              title:
-                "RAFIQUE ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect",
+              title: "RAFIQUE ESTUDIO — Senior Full-Stack Engineer & UI/UX Architect",
               description:
                 "Shopify commerce, AI automation pipelines, and full-stack SaaS engineering.",
               keywords: ["Shopify", "AI", "SaaS", "Engineering"],
@@ -92,7 +91,9 @@ function AdminSeoPage() {
       </div>
 
       {loading ? (
-        <p className="text-xs font-mono text-muted-foreground py-8">Loading SEO configurations...</p>
+        <p className="text-xs font-mono text-muted-foreground py-8">
+          Loading SEO configurations...
+        </p>
       ) : (
         <div className="rounded-xl border border-border bg-surface/60 overflow-hidden">
           <table className="w-full text-left text-xs">
@@ -112,7 +113,9 @@ function AdminSeoPage() {
                   <td className="p-4 font-semibold text-foreground max-w-xs truncate">
                     {seo.title || "—"}
                   </td>
-                  <td className="p-4 text-muted-foreground max-w-sm truncate">{seo.description || "—"}</td>
+                  <td className="p-4 text-muted-foreground max-w-sm truncate">
+                    {seo.description || "—"}
+                  </td>
                   <td className="p-4">
                     <span
                       className={`rounded px-2 py-0.5 font-mono text-[0.65rem] ${
@@ -144,7 +147,10 @@ function AdminSeoPage() {
           <div className="w-full max-w-lg rounded-xl border border-border bg-background p-6 text-foreground shadow-2xl">
             <div className="flex items-center justify-between border-b border-border pb-4">
               <h2 className="text-lg font-bold text-foreground">Route SEO Configuration</h2>
-              <button onClick={() => setEditing(null)} className="text-muted-foreground hover:text-foreground">
+              <button
+                onClick={() => setEditing(null)}
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <X className="h-5 w-5" />
               </button>
             </div>

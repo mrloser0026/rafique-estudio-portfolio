@@ -27,7 +27,7 @@ function AdminLeadsPage() {
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [updating, setUpdating] = useState(false);
   const { data: globalSettings } = useSuspenseQuery(globalSettingsQuery);
-  const siteConfig = globalSettings?.['site_config'] || {};
+  const siteConfig = globalSettings?.["site_config"] || {};
 
   const load = async () => {
     try {
@@ -75,7 +75,9 @@ function AdminLeadsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-foreground tracking-tight">Leads & Inquiries CRM</h1>
+          <h1 className="text-2xl font-bold text-foreground tracking-tight">
+            Leads & Inquiries CRM
+          </h1>
           <p className="mt-1 text-xs text-muted-foreground font-mono">
             Protected by PostgreSQL RLS. Anonymous users cannot read leads.
           </p>
@@ -223,7 +225,9 @@ function AdminLeadsPage() {
               </div>
 
               <div>
-                <span className="font-mono text-muted-foreground uppercase">Project Details / Message</span>
+                <span className="font-mono text-muted-foreground uppercase">
+                  Project Details / Message
+                </span>
                 <div className="mt-2 rounded-lg border border-border bg-surface p-4 text-foreground whitespace-pre-wrap leading-relaxed">
                   {selectedLead.details}
                 </div>

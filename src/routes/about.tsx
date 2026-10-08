@@ -16,8 +16,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       {
-        title:
-          "About M. Jahanzaib Rafique — Founder & Full-Stack Engineer | Rafique Estudio",
+        title: "About M. Jahanzaib Rafique — Founder & Full-Stack Engineer | Rafique Estudio",
       },
       {
         name: "description",
@@ -26,8 +25,7 @@ export const Route = createFileRoute("/about")({
       },
       {
         property: "og:title",
-        content:
-          "About M. Jahanzaib Rafique — Founder & Full-Stack Engineer | Rafique Estudio",
+        content: "About M. Jahanzaib Rafique — Founder & Full-Stack Engineer | Rafique Estudio",
       },
       {
         property: "og:description",
@@ -60,7 +58,7 @@ const PRINCIPLES = [
 
 function AboutPage() {
   const { data: globalSettings } = useSuspenseQuery(globalSettingsQuery);
-  const siteConfig = globalSettings?.['site_config'] || {};
+  const siteConfig = globalSettings?.["site_config"] || {};
 
   return (
     <div className="pb-24 pt-32 md:pt-40">
@@ -127,24 +125,40 @@ function AboutPage() {
                 </div>
 
                 <div className="mt-4 aspect-[4/5] w-full overflow-hidden rounded-xl bg-muted border border-border/80">
-                  {true ? (
-                    <img
-                      src={portraitImage}
-                      alt="M. Jahanzaib Rafique — Founder & Full-Stack Engineer at Rafique Estudio"
-                      loading="lazy"
-                      decoding="async"
-                      className="h-full w-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                      }}
-                    />
-                  ) : null}
-                  <div className={`flex h-full w-full flex-col items-center justify-center bg-surface-raised text-muted-foreground hidden`}>
+                  <img
+                    src={portraitImage}
+                    alt="M. Jahanzaib Rafique — Founder & Full-Stack Engineer at Rafique Estudio"
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                      e.currentTarget.nextElementSibling?.classList.remove("hidden");
+                    }}
+                  />
+                  <div
+                    className={`flex h-full w-full flex-col items-center justify-center bg-surface-raised text-muted-foreground hidden`}
+                  >
                     <div className="flex h-20 w-20 items-center justify-center rounded-full border border-border/80 bg-surface/50">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="opacity-50"
+                      >
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                      </svg>
                     </div>
-                    <span className="mt-4 text-[10px] font-medium uppercase tracking-widest opacity-60">Portrait Pending</span>
+                    <span className="mt-4 text-[10px] font-medium uppercase tracking-widest opacity-60">
+                      Portrait Pending
+                    </span>
                   </div>
                 </div>
 
@@ -158,7 +172,9 @@ function AboutPage() {
                     <span className="flex items-center gap-1.5">
                       <MapPin className="h-3.5 w-3.5 text-primary" /> Location:
                     </span>
-                    <span className="font-mono text-foreground font-medium">{siteConfig.location}</span>
+                    <span className="font-mono text-foreground font-medium">
+                      {siteConfig.location}
+                    </span>
                   </div>
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span className="flex items-center gap-1.5">
@@ -172,7 +188,9 @@ function AboutPage() {
                     <span className="flex items-center gap-1.5">
                       <Award className="h-3.5 w-3.5 text-primary" /> Handle:
                     </span>
-                    <span className="font-mono text-emerald-400 font-medium">{siteConfig.handle}</span>
+                    <span className="font-mono text-emerald-400 font-medium">
+                      {siteConfig.handle}
+                    </span>
                   </div>
                 </div>
 

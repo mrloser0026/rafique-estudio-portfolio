@@ -56,7 +56,9 @@ function AdminLoginPage() {
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg border border-border-strong bg-surface-raised text-primary">
             <Lock className="h-6 w-6 text-primary" />
           </div>
-          <h1 className="mt-6 text-2xl font-bold tracking-tight text-foreground">RAFIQUE ESTUDIO OS</h1>
+          <h1 className="mt-6 text-2xl font-bold tracking-tight text-foreground">
+            RAFIQUE ESTUDIO OS
+          </h1>
           <p className="mt-2 text-xs font-mono tracking-widest text-muted-foreground uppercase">
             Staff Access Control Plane
           </p>
