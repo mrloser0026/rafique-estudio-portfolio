@@ -13,8 +13,17 @@ export default defineConfig({
   },
   projects: [
     {
-      name: "chromium",
+      name: "public",
+      testMatch: /public-site\.spec\.ts/,
       use: { ...devices["Desktop Chrome"] },
+    },
+    {
+      name: "admin",
+      testMatch: /admin-panel\.spec\.ts/,
+      use: { 
+        ...devices["Desktop Chrome"],
+        storageState: '.auth/admin.json'
+      },
     },
   ],
   webServer: {

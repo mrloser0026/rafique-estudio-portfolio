@@ -45,7 +45,7 @@ export const getServices = createServerFn({ method: "GET" }).handler(
 );
 
 export const getServiceBySlug = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ slug: z.string().min(1) }).parse(data))
+  .validator((data: unknown) => z.object({ slug: z.string().min(1) }).parse(data))
   .handler(async ({ data }): Promise<Service | null> => {
     const { data: row, error } = await publicClient()
       .from("services")
@@ -70,7 +70,7 @@ export const getProjects = createServerFn({ method: "GET" }).handler(
 );
 
 export const getProjectBySlug = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ slug: z.string().min(1) }).parse(data))
+  .validator((data: unknown) => z.object({ slug: z.string().min(1) }).parse(data))
   .handler(async ({ data }): Promise<Project | null> => {
     const { data: row, error } = await publicClient()
       .from("projects")
@@ -136,7 +136,7 @@ export const getHomepage = createServerFn({ method: "GET" }).handler(
 );
 
 export const getSeoForRoute = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ route: z.string().min(1) }).parse(data))
+  .validator((data: unknown) => z.object({ route: z.string().min(1) }).parse(data))
   .handler(async ({ data }): Promise<SeoSetting | null> => {
     const { data: row, error } = await publicClient()
       .from("seo_settings")
@@ -149,7 +149,7 @@ export const getSeoForRoute = createServerFn({ method: "GET" })
 
 /** Custom pages built in the admin CMS. */
 export const getCustomPage = createServerFn({ method: "GET" })
-  .inputValidator((data: unknown) => z.object({ slug: z.string().min(1) }).parse(data))
+  .validator((data: unknown) => z.object({ slug: z.string().min(1) }).parse(data))
   .handler(async ({ data }): Promise<{ page: SitePage; sections: PageSection[] } | null> => {
     const supabase = publicClient();
     const { data: page, error } = await supabase
@@ -195,7 +195,7 @@ export type LeadInput = z.infer<typeof leadSchema>;
  * so nothing is readable back from the public surface.
  */
 export const submitLead = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => leadSchema.parse(data))
+  .validator((data: unknown) => leadSchema.parse(data))
   .handler(async ({ data }): Promise<{ ok: true }> => {
     const { error } = await publicClient()
       .from("leads")
