@@ -29,12 +29,16 @@
 | Audit Logs | Read | Code Inspection | FIXED | |
 
 ## Test Evidence
+- Implemented Vitest integration test suite to verify `adminClient` accurately extracts `Authorization` headers.
+- Implemented Playwright test suite to verify the public site connections to Supabase.
 - Verified build succeeds successfully.
 - Code analysis confirms data fetching tokens are passed effectively.
+- Typechecking (`tsc`) successfully passes across the entire project.
 
 ## Security Findings
 - Critical dependency vulnerabilities patched.
 - Authentication Token context is properly validated against RLS using Supabase JWT.
+- Supabase RLS Audit complete: Verified `services`, `projects`, `pages` correctly enforce `is_published` for `anon`. Verified `leads` strictly restricts `SELECT` to operations staff via `can_manage_ops()`.
 - XSS vulnerable overrides removed.
 
 ## Deployment History

@@ -26,7 +26,7 @@ function cleanEnv(val: string | undefined): string {
     .trim();
 }
 
-function adminClient(authToken?: string) {
+export function adminClient(authToken?: string) {
   const url = cleanEnv(process.env["SUPABASE_URL"] || process.env["VITE_SUPABASE_URL"]);
   const anonKey = cleanEnv(
     process.env["SUPABASE_ANON_KEY"] ||
