@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { TextReveal, MagneticButton, Reveal } from "@/components/ui/motion-primitives";
 import type { PageSection } from "@/lib/content-types";
+import heroFallbackImg from "@/assets/images/2.jpeg";
 
 interface HeroSectionProps {
   section: PageSection;
@@ -14,8 +15,8 @@ export function HeroSection({ section }: HeroSectionProps) {
   const opacity = useTransform(scrollY, [0, 400], [1, 0.3]);
 
   const content = (section.content || {}) as Record<string, any>;
-  const desktopImage = content["desktopImage"] || "/images/2.jpeg";
-  const mobileImage = content["mobileImage"] || "/images/2.jpeg";
+  const desktopImage = content["desktopImage"] || heroFallbackImg;
+  const mobileImage = content["mobileImage"] || heroFallbackImg;
   const eyebrow = content["eyebrow"] || "RAFIQUE ESTUDIO";
   const primaryCtaLabel = content["primary_cta_label"] || "Start an engagement";
   const primaryCtaUrl = content["primary_cta_url"] || "/contact?source=hero_primary";

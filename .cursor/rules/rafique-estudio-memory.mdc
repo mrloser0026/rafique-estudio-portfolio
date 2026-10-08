@@ -1,0 +1,9 @@
+---
+description: Rafique Estudio Neural Memory Layer — always-on context and update protocol
+alwaysApply: true
+---
+
+- Before you work: startup sequence + Memory consulted: [IDs]
+- Locked constraints: do not violate
+- After you work: update checklist
+- Canonical path: .ai_memory/context/ only

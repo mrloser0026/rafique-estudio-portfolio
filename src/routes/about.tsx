@@ -5,6 +5,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { globalSettingsQuery } from "@/lib/public-queries";
 import { paragraphs } from "@/lib/section-utils";
 import { Reveal, TextReveal, TiltCard } from "@/components/ui/motion-primitives";
+import portraitImage from "@/assets/images/2.jpeg";
 
 const ABOUT_TEXT = `I'm M. Jahanzaib Rafique, founder of Rafique Estudio.
 I design and engineer high-performance digital experiences for brands that need more than a template.
@@ -128,7 +129,7 @@ function AboutPage() {
                 <div className="mt-4 aspect-[4/5] w-full overflow-hidden rounded-xl bg-muted border border-border/80">
                   {true ? (
                     <img
-                      src="/images/2.jpeg"
+                      src={portraitImage}
                       alt="M. Jahanzaib Rafique — Founder & Full-Stack Engineer at Rafique Estudio"
                       loading="lazy"
                       decoding="async"
