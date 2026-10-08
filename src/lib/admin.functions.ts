@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { getRequest } from "@tanstack/react-start/server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 
@@ -34,9 +35,22 @@ function adminClient(authToken?: string) {
   );
   if (!url || !anonKey) throw new Error("Supabase credentials not configured");
 
+  let finalToken = authToken;
+  if (!finalToken) {
+    try {
+      const req = getRequest();
+      if (req) {
+        const authHeader = req.headers.get("authorization");
+        if (authHeader && authHeader.startsWith("Bearer ")) {
+          finalToken = authHeader.replace("Bearer ", "");
+        }
+      }
+    } catch (e) {}
+  }
+
   const headers: Record<string, string> = {};
-  if (authToken) {
-    headers["Authorization"] = `Bearer ${cleanEnv(authToken)}`;
+  if (finalToken) {
+    headers["Authorization"] = `Bearer ${cleanEnv(finalToken)}`;
   }
 
   return createClient<Database>(url, anonKey, {
