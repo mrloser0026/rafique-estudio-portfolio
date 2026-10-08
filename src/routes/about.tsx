@@ -126,9 +126,9 @@ function AboutPage() {
                 </div>
 
                 <div className="mt-4 aspect-[4/5] w-full overflow-hidden rounded-xl bg-muted border border-border/80">
-                  {siteConfig.portrait_url || "/images/3.jpeg" ? (
+                  {siteConfig.portrait_url || "/images/4.jpeg" ? (
                     <img
-                      src={siteConfig.portrait_url || "/images/3.jpeg"}
+                      src={siteConfig.portrait_url || "/images/4.jpeg"}
                       alt="M. Jahanzaib Rafique — Founder & Full-Stack Engineer at Rafique Estudio"
                       loading="lazy"
                       decoding="async"
@@ -139,7 +139,7 @@ function AboutPage() {
                       }}
                     />
                   ) : null}
-                  <div className={`flex h-full w-full flex-col items-center justify-center bg-surface-raised text-muted-foreground ${siteConfig.portrait_url || "/images/3.jpeg" ? 'hidden' : ''}`}>
+                  <div className={`flex h-full w-full flex-col items-center justify-center bg-surface-raised text-muted-foreground ${siteConfig.portrait_url || "/images/4.jpeg" ? 'hidden' : ''}`}>
                     <div className="flex h-20 w-20 items-center justify-center rounded-full border border-border/80 bg-surface/50">
                       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     </div>
