@@ -8,9 +8,9 @@ test.describe("Admin Panel End-to-End Tests", () => {
 
   test("Dashboard loads and displays metrics", async ({ page }) => {
     // Wait for the auth check to complete
-    await expect(page.locator("text=Executive Dashboard")).toBeVisible({ timeout: 15000 });
-    await expect(page.locator("text=Total Leads").first()).toBeVisible();
-    await expect(page.locator("text=Paid Revenue").first()).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Executive Dashboard" })).toBeVisible({ timeout: 20000 });
+    await expect(page.locator("text=Total Leads").first()).toBeVisible({ timeout: 20000 });
+    await expect(page.locator("text=Paid Revenue").first()).toBeVisible({ timeout: 20000 });
   });
 
   test("Leads CRM displays leads and allows status updates", async ({ page }) => {

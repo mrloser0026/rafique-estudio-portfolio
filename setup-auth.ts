@@ -4,7 +4,7 @@ import * as fs from "fs";
 
 (async () => {
   console.log("Launching browser for authentication...");
-  const browser = await chromium.launch({ headless: false, channel: "chrome" });
+  const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext();
   const page = await context.newPage();
 
