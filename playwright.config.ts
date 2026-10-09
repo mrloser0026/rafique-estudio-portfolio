@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    baseURL: "http://localhost:5173",
+    baseURL: "http://localhost:8080",
     trace: "on-first-retry",
   },
   projects: [
@@ -19,16 +19,16 @@ export default defineConfig({
     },
     {
       name: "admin",
-      testMatch: /admin-panel\.spec\.ts/,
-      use: { 
+      testMatch: /admin-.*\.spec\.ts/,
+      use: {
         ...devices["Desktop Chrome"],
-        storageState: '.auth/admin.json'
+        storageState: ".auth/admin.json",
       },
     },
   ],
   webServer: {
-    command: "bun run dev --port 5173 --strictPort",
-    url: "http://localhost:5173",
+    command: "bun run dev --port 8080 --strictPort",
+    url: "http://localhost:8080",
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
   },

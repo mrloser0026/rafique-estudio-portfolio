@@ -41,3 +41,5 @@ scratch/
 
 .vercel
 .env*
+
+.auth

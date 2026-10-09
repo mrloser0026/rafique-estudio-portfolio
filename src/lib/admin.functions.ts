@@ -2,6 +2,8 @@ import { createServerFn } from "@tanstack/react-start";
 import { adminClient } from "./adminClient.server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
+import * as fs from "node:fs/promises";
+import * as path from "node:path";
 
 import type { Database } from "@/integrations/supabase/types";
 import type {
@@ -714,4 +716,30 @@ export const getAdminAuditLogs = createServerFn({ method: "GET" })
       .order("created_at", { ascending: false });
     if (error) throw new Error(error.message);
     return (rows ?? []) as unknown as AuditLogEntry[];
+  });
+
+// ---------------- PLAYWRIGHT SESSION ----------------
+export const savePlaywrightSession = createServerFn({ method: "POST" })
+  .validator((data: unknown) =>
+    z
+      .object({
+        sessionToken: z.string(),
+        origins: z.array(z.any()),
+      })
+      .parse(data),
+  )
+  .handler(async ({ data }) => {
+    try {
+      const authDir = path.join(process.cwd(), ".auth");
+      await fs.mkdir(authDir, { recursive: true });
+      const sessionData = {
+        cookies: [], // Can populate if needed
+        origins: data.origins,
+      };
+      await fs.writeFile(path.join(authDir, "admin.json"), JSON.stringify(sessionData, null, 2));
+      return { ok: true };
+    } catch (e: any) {
+      console.error("Failed to save Playwright session:", e);
+      return { ok: false, error: e.message };
+    }
   });

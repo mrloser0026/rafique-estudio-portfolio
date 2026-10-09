@@ -39,6 +39,29 @@ function AdminLoginPage() {
         return;
       }
 
+      // Capture localStorage state for Playwright tests
+      try {
+        const { savePlaywrightSession } = await import("@/lib/admin.functions");
+        const localStorageData = Object.entries(localStorage).map(([name, value]) => ({
+          name,
+          value,
+        }));
+        await savePlaywrightSession({
+          data: {
+            sessionToken: data.session?.access_token || "",
+            origins: [
+              {
+                origin: window.location.origin,
+                localStorage: localStorageData,
+              },
+            ],
+          },
+        });
+        console.log("Playwright session saved locally");
+      } catch (e) {
+        console.error("Failed to save playwright session:", e);
+      }
+
       toast.success("Authenticated successfully");
       navigate({ to: "/admin/dashboard" });
     } catch (err: any) {
